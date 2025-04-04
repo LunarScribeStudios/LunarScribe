@@ -5,10 +5,6 @@ function showPage(pageId) {
     toggleMenu();
 }
 
-window.onload = function () {
-    showPage('beranda'); // Tampilkan halaman Beranda saat pertama kali dimuat
-}
-
 function pesanProduk(namaProduk) {
     var nomorWA = "6285389311795";
     var teks = "Saya ingin memesan produk *" + namaProduk + "*, apakah masih ada? ";
