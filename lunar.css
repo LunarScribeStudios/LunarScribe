@@ -114,16 +114,16 @@ body {
     transform: translateY(0);
 }
 
-#beranda {
-    display: block;
-}
-
 .container {
     display: none;
     padding: 20px;
 }
 
 /* toko */
+
+#beranda {
+    display: block;
+}
 
 .card-container {
     display: flex;
