@@ -119,6 +119,10 @@ body {
     padding: 20px;
 }
 
+#beranda {
+    display: block;
+}
+
 /* toko */
 
 .card-container {
