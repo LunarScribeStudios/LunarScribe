@@ -5,6 +5,10 @@ function showPage(pageId) {
     toggleMenu();
 }
 
+window.onload = function () {
+    showPage('beranda'); // Tampilkan halaman Beranda saat pertama kali dimuat
+}
+
 function pesanProduk(namaProduk) {
     var nomorWA = "6285389311795";
     var teks = "Saya ingin memesan produk *" + namaProduk + "*, apakah masih ada? ";
@@ -175,7 +179,7 @@ countdown();
 function share(platform) {
     const url = encodeURIComponent("https://lunarscribestudios.github.io/LunarScribe/");
     let shareUrl = "";
-    
+
     if (platform === 'x') {
         shareUrl = `https://twitter.com/intent/tweet?url=${url}`;
     } else if (platform === 'ig') {
@@ -183,6 +187,94 @@ function share(platform) {
     } else if (platform === 'tt') {
         shareUrl = `https://www.tiktok.com/share?url=${url}`;
     }
-    
+
     window.open(shareUrl, '_blank');
 }
+
+// Simulate loading process
+window.addEventListener("load", () => {
+    const loadingScreen = document.getElementById("loading");
+    const mainContent = document.getElementById("main-content");
+    const startButton = document.getElementById("start-button");
+    const loadingVideo = document.getElementById("loading-video");
+    const progressBar = document.querySelector("#progress-bar div");
+    const progressBarContainer = document.getElementById("progress-bar");
+
+    // Show Start Button and hide progress bar after progress completes
+    progressBar.addEventListener("animationend", () => {
+        startButton.style.display = "block";
+        progressBarContainer.style.display = "none";
+    });
+
+    // Handle Start Button Click
+    startButton.addEventListener("click", () => {
+        loadingScreen.style.display = "none";
+        loadingVideo.pause();
+        mainContent.style.display = "flex";
+    });
+
+    // Add Splash Effect on Click
+    document.addEventListener("click", (e) => {
+        const splash = document.createElement("div");
+        splash.className = "splash";
+        splash.style.left = `${e.pageX}px`;
+        splash.style.top = `${e.pageY}px`;
+        document.body.appendChild(splash);
+
+        splash.addEventListener("animationend", () => {
+            splash.remove();
+        });
+    });
+});
+
+const canvas = document.getElementById("starsCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const stars = [];
+class Star {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2;
+        this.speedY = Math.random() * 5 + 2;
+    }
+    draw() {
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    update() {
+        this.y += this.speedY;
+        if (this.y > canvas.height) {
+            this.y = 0;
+            this.x = Math.random() * canvas.width;
+        }
+    }
+}
+
+function createStars() {
+    for (let i = 0; i < 100; i++) {
+        stars.push(new Star());
+    }
+}
+
+function animateStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stars.forEach(star => {
+        star.update();
+        star.draw();
+    });
+    requestAnimationFrame(animateStars);
+}
+
+createStars();
+animateStars();
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+        document.querySelector(".containercreator").classList.add("fadeIn");
+    }, 500);
+});

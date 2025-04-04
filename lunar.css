@@ -4,9 +4,11 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
     font-family: Arial, sans-serif;
-    background: #a4c6ee;
+    background: #5ba5f9;
     text-align: center;
     margin: 0;
     font-weight: bold;
@@ -45,6 +47,191 @@ body {
 
     100% {
         background-position: 0% 50%;
+    }
+}
+
+/* Animasi Background*/
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 150%;
+    background: url('https://source.unsplash.com/1600x900/?galaxy,nebula') no-repeat center center/cover;
+    filter: blur(10px);
+    z-index: -2;
+    animation: pulse 5s infinite alternate;
+}
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.02); }
+}
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Loading Screen Styling */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(30,60,114,1) 0%, rgba(42,82,152,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+#loading-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: blur(5px) brightness(0.7);
+}
+
+#game-title {
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    font-size: 50px;
+    background: linear-gradient(90deg, #ff7f50, #ff1493, #00ffcc); /* Gradient */
+    background-clip: text; /* Clip background ke teks */
+    color: transparent; /* Set teks jadi transparan agar gradient terlihat */
+    font-weight: bold;
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
+    z-index: 3;
+}
+
+#game-title1 {
+    position:absolute;
+    bottom: 17%;
+    left: 39%;
+    font-size: 3px;
+    background: linear-gradient(90deg, #ff7f50, #ff1493, #00ffcc); /* Gradient */
+    background-clip: text; /* Clip background ke teks */
+    color: transparent; /* Set teks jadi transparan agar gradient terlihat */
+    font-weight: bold;
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
+    z-index: 3;
+    padding: 20px 60px;
+}
+
+#game-version {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    font-size: 20px;
+    color: #ffffff;
+    z-index: 3;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+#progress-bar {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    width: 80%;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+#progress-bar div {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #0053f8, #1689ff, #0756f0);
+    background-size: 300% 100%;
+    animation: load 6s linear forwards, gradient-shift 4s infinite;
+}
+
+@keyframes load {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+#start-button {
+    display: none;
+    position: absolute;
+    bottom: 15%;
+    left: 39%;
+    padding: 20px 60px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #072f7c, #1689ff);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 3;
+    text-transform: uppercase;
+    box-shadow: 0 12px 40px rgba(102, 112, 255, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fade-in 1.5s ease-out 6s;
+}
+
+#start-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 45px rgba(102, 122, 255, 0.9);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Splash Effect Styling */
+.splash {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(8, 153, 244, 0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: splash-animation 1s ease-out;
+}
+
+@keyframes splash-animation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
     }
 }
 
@@ -119,11 +306,11 @@ body {
     padding: 20px;
 }
 
+/* toko */
+
 #beranda {
     display: block;
 }
-
-/* toko */
 
 .card-container {
     display: flex;
@@ -212,7 +399,7 @@ body {
 .btn,
 .cart {
     background: #a4c6ee;
-    color: white;
+    color: blue;
     border: none;
     padding: 10px;
     margin-top: 4px;
@@ -455,7 +642,7 @@ body {
 
 .discover-btn,
 .explore-btn {
-    background-color: #a4c6ee;
+    background-color: #5ba5f9;
     color: #0756f0;
     padding: 10px 20px;
     font-size: 1rem;
@@ -467,7 +654,7 @@ body {
 
 .discover-btn:hover,
 .explore-btn:hover {
-    background-color: #0756f0;
+    background-color: #a4c6ee;
 }
 
 .mainhome {
@@ -641,6 +828,7 @@ nav {
 }
 
 .news-container {
+    color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -648,7 +836,7 @@ nav {
 }
 
 .news-card {
-    background: white;
+    background: #1689ff;
     margin: 20px;
     width: 300px;
     border-radius: 10px;
@@ -817,7 +1005,7 @@ nav {
     }
 }
 
-/* baca komik */
+/* baca novel */
 .searchbacanomik-box input {
     background-color: #a4c6ee;
     padding: 8px;
@@ -1084,4 +1272,65 @@ nav {
     float: right;
     cursor: pointer;
     font-size: 28px;
+}
+
+/* web developer */
+
+.containercreator {
+    color: white;
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(30px);
+    animation: fadeIn 1s ease-in-out;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 10;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.profilecreator-pic {
+    margin-top: 10px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 6px solid rgb(75, 132, 254);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s;
+}
+.containercreator h1, .bio, .containercreator p{
+    margin-top: 10px;
+}
+.containercreator p{
+    background: linear-gradient(270deg, #4d77c6, #072f7c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+.profilecreator-pic:hover {
+    transform: scale(1.2) rotate(8deg);
+    box-shadow: 0 0 40px rgba(66, 130, 248, 0.8);
+}
+.socialcreator-links a {
+    margin-top: 10px;
+    color: white;
+    font-size: 32px;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: transform 0.4s, color 0.4s;
+}
+.socialcreator-links a:hover {
+    margin-top: 10px;
+    color: #ffd700;
+    transform: translateY(-8px) scale(1.3);
+}
+.glowcreator-text {
+    margin-top: 10px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+    font-weight: 600;
 }

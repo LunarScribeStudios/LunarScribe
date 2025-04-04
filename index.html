@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>LunarScribe</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="lunar.css">
     <script defer src="lunar.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body> 
+
+<body>
+
+    <!-- Loading Screen -->
+    <canvas id="starsCanvas"></canvas>
+    <div class="animated-bg"></div>
+    <div id="loading">
+        <video id="loading-video" autoplay muted loop>
+            <source src="load.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div id="game-title">
+                <img src="logo.png" alt="logo" width="650" height="350">
+        </div>
+        <div id="game-title1">
+            <img src="studio.png" alt="logo" width="300" height="200">
+    </div>
+    <div id="game-version">Version 1.09150011</div>
+        <div id="progress-bar">
+            <div></div>
+            <div></div>
+        </div>
+        <button id="start-button">Go To The Website</button>
+    </div>
 
     <!-- header -->
 
     <header class="header">
-        <h1 class="logo"><img src="logo.png" alt="LunarScribe Logo"></h1>
+        <h1 class="logo"><img src="logo.png" alt="LunarScribe Logo" width="100" height="70"></h1>
         <div class="menu" id="menu">
             <div onclick="showPage('beranda')">Home</div>
             <div onclick="showPage('news')">News</div>
@@ -22,7 +48,7 @@
                 <div onclick="toggleDropdown(event, this)">About</div>
                 <div class="dropdown-content">
                     <div onclick="showPage('about'); event.stopPropagation();">Website</div>
-                    <div onclick="showPage('author'); event.stopPropagation();">Author</div>
+                    <div onclick="showPage('developer'); event.stopPropagation();">Web Developer</div>
                 </div>
             </div>
             <div onclick="showPage('event')">Event</div>
@@ -38,47 +64,77 @@
     </header>
     <div class="banner">
         <h2>Write Dreams Under the Moonlight</h2>
-        <p>At LunarScribe Studios, we bring boundless worlds to life, where every word shines and every story finds its destiny.</p>
-        <p>Explore epic narratives, thrilling mysteries, and inspiring adventures—crafted with dedication for true readers.</p>
+        <p>At LunarScribe Studios, we bring boundless worlds to life, where every word shines and every story finds its
+            destiny.</p>
+        <p>Explore epic narratives, thrilling mysteries, and inspiring adventures—crafted with dedication for true
+            readers.</p>
     </div>
-    
+
 
     <!-- halaman beranda -->
 
     <div class="container" id="beranda">
         <main class="mainhome">
             <h2 class="headline" style="color: #fff;">Home Page</h2>
-            <p class="description" style="color: #fff;">At LunarScribe Studios, every word holds meaning, and every story is a journey. Discover our works and step into new worlds waiting to be explored.</p>
+            <p class="description" style="color: #fff;">At LunarScribe Studios, every word holds meaning, and every
+                story is a journey. Discover our works and step into new worlds waiting to be explored.</p>
             <button class="explore-btn" onclick="showPage('about')" style="color: #007BFF;">About Website</button>
         </main>
-    
+
         <section class="top-sectionhome">
             <h2>Top Novels This Week</h2>
             <div class="novelhome-list">
-                <div class="novel-card"><h3>Home Sweet Loan</h3><p>Almira Bastari</p></div>
-                <div class="novel-card"><h3>Look Back</h3><p>Tatsuki Fujimoto</p></div>
-                <div class="novel-card"><h3>Atomic Habits</h3><p>James Clear</p></div>
+                <div class="novel-card">
+                    <h3>Home Sweet Loan</h3>
+                    <p>Almira Bastari</p>
+                </div>
+                <div class="novel-card">
+                    <h3>Look Back</h3>
+                    <p>Tatsuki Fujimoto</p>
+                </div>
+                <div class="novel-card">
+                    <h3>Atomic Habits</h3>
+                    <p>James Clear</p>
+                </div>
             </div>
         </section>
-    
+
         <section class="top-sectionhome">
             <h2>Top Novels This Month</h2>
             <div class="novelhome-list">
-                <div class="novel-card"><h3>Orang-orang Biasa</h3><p>Andrea Hirata</p></div>
-                <div class="novel-card"><h3>Hujan</h3><p>Tere Liye</p></div>
-                <div class="novel-card"><h3>Laut Bercerita</h3><p>Leila S. Chudori</p></div>
+                <div class="novel-card">
+                    <h3>Orang-orang Biasa</h3>
+                    <p>Andrea Hirata</p>
+                </div>
+                <div class="novel-card">
+                    <h3>Hujan</h3>
+                    <p>Tere Liye</p>
+                </div>
+                <div class="novel-card">
+                    <h3>Laut Bercerita</h3>
+                    <p>Leila S. Chudori</p>
+                </div>
             </div>
         </section>
-    
+
         <section class="top-sectionhome">
             <h2>Top Authors This Month</h2>
             <div class="authorhome-list">
-                <div class="author-card"><h3>Andrea Hirata</h3><p>selling 5.000.000+ copies worldwide</p></div>
-                <div class="author-card"><h3>Pidi Baiq</h3><p>selling 700.000 copies worldwide</p></div>
-                <div class="author-card"><h3>Eka Kurniawan</h3><p>received international recognition</p></div>
+                <div class="author-card">
+                    <h3>Andrea Hirata</h3>
+                    <p>selling 5.000.000+ copies worldwide</p>
+                </div>
+                <div class="author-card">
+                    <h3>Pidi Baiq</h3>
+                    <p>selling 700.000 copies worldwide</p>
+                </div>
+                <div class="author-card">
+                    <h3>Eka Kurniawan</h3>
+                    <p>received international recognition</p>
+                </div>
             </div>
         </section>
-    
+
         <section class="reviewshome">
             <h2>Reader Reviews</h2>
             <div class="reviewhome-card">
@@ -94,21 +150,22 @@
 
     <!-- halaman news -->
     <div class="container" id="news">
-        <h1>News</h1>
-        
+        <h1 style="color: #fff;">News</h1>
+
         <main>
             <section class="news-container">
-                <article class="news-card" onclick="openModal('news1.jpeg', 'Novel Terbaru yang Menggebrak Pasar', 'John Doe', '1 April 2025', 'Ini adalah isi lengkap dari berita pertama...')">
+                <article class="news-card"
+                    onclick="openModal('news1.jpeg', 'Novel Terbaru yang Menggebrak Pasar', 'John Doe', '1 April 2025', 'Ini adalah isi lengkap dari berita pertama...')">
                     <img src="news1.jpeg" alt="Berita 1">
                     <div class="news-content">
-                        <h2>Novel Terbaru yang Menggebrak Pasar</h2>
-                        <p>Novel terbaru dari penulis terkenal telah rilis dan menjadi topik hangat...</p>
-                        <a>Baca selengkapnya</a>
+                        <h2 style="color: #fff;">Novel Terbaru yang Menggebrak Pasar</h2>
+                        <p style="color: #cbcfff;">Novel terbaru dari penulis terkenal telah rilis dan menjadi topik hangat...</p>
+                        <a style="color: #072f7c;">Baca selengkapnya</a>
                     </div>
                 </article>
             </section>
         </main>
-        
+
         <div id="modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
@@ -119,7 +176,7 @@
                 <p id="modal-text"></p>
             </div>
         </div>
-    
+
         <aside class="sidebar">
             <h3>Berita Populer</h3>
             <ul>
@@ -136,37 +193,40 @@
         <div class="containerabout">
             <div class="glowing-borderabout"></div>
             <h1 class="h1about">About LunarScribe</h1>
-            <p class="descriptionabout">"Mewujudkan imajinasi menjadi kenyataan dalam pengalaman membaca yang tiada duanya."</p>
-            
+            <p class="descriptionabout">"Turning imagination into reality in an unparalleled reading experience."</p>
             <p class="about-content">
                 <i class="fas fa-book-open animated-icon"></i><br>
-                <span class="highlightabout">LunarScribe</span> adalah <span class="highlightabout">perpaduan sempurna</span> antara seni dan teknologi, tempat kata-kata bertransformasi menjadi <span class="highlightabout">emosi yang mendalam</span>. Kami menghadirkan pengalaman membaca yang tidak hanya visual tetapi juga imersif dan penuh kemewahan.
+                <span class="highlightabout">LunarScribe</span> is the <span class="highlightabout">perfect blend</span> of art and technology, where words transform into <span class="highlightabout">deep emotions</span>. We offer a reading experience that is not only visual but also immersive and luxurious.
             </p>
-            
+
             <p class="about-content">
-                <i class="fas fa-star animated-icon"></i><br>
-                Dengan <span class="highlightabout">arsitektur digital futuristik</span>, kami menghadirkan ribuan novel eksklusif dengan tampilan yang elegan, pencahayaan yang nyaman, dan mode baca premium yang dirancang untuk meningkatkan kenikmatan literasi.
+                <i class="fas fa-star animated-icon"></i><br>  
+                With a <span class="highlightabout">futuristic digital architecture</span>, we present thousands of exclusive novels with an elegant display, comfortable lighting, and a premium reading mode designed to enhance the joy of literacy.
             </p>
-            
             <p class="about-content">
-                <i class="fas fa-feather-alt animated-icon"></i><br>
-                LunarScribe bukan hanya tentang membaca, tetapi juga <span class="highlightabout">menciptakan</span>. Kami menyediakan panggung megah bagi para penulis untuk memperkenalkan karya mereka kepada dunia dengan dukungan komunitas yang hangat dan penuh inspirasi.
+                <i class="fas fa-feather-alt animated-icon"></i><br>  
+                LunarScribe is not just about reading, but also about <span class="highlightabout">creating</span>.  
+                We provide a grand stage for writers to showcase their works to the world, supported by a warm and inspiring community.
             </p>
         </div>
     </div>
 
     <!-- halaman toko -->
-    
+
     <div class="container" id="toko">
         <img src="toko.jpg" alt="toko" width="700px" height="300">
         <div class="card-container">
             <div class="card">
                 <img src="1.jpg" alt="1" width="100px">
                 <div class="title"><strong>Kala Itu Langit Biru</strong></div>
-                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>   
+                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>
                 <div class="author">Nama Author</div>
                 <div class="harga">50.000</div>
-                <button class="cart" onclick="pesanProduk('Kala Itu Langit Biru')">🛒</button>
+                <button class="cart" onclick="pesanProduk('Pulang')">
+                    <svg width="20" height="18" viewBox="0 0 24 24" fill="#1689ff" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z"/>
+                    </svg>
+                </button>
                 <div class="overlay" id="overlay"></div>
                 <div class="detail-container">
                     <div class="cover">
@@ -185,10 +245,14 @@
             <div class="card">
                 <img src="2.jpg" alt="2" width="105px">
                 <div class="title"><strong>Pulang</strong></div>
-                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>   
+                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>
                 <div class="author">Nama Author</div>
                 <div class="harga">45.000</div>
-                <button class="cart" onclick="pesanProduk('Pulang')">🛒</button>
+                <button class="cart" onclick="pesanProduk('Pulang')">
+                    <svg width="20" height="18" viewBox="0 0 24 24" fill="#1689ff" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z"/>
+                    </svg>
+                </button>                  
                 <div class="overlay" id="overlay"></div>
                 <div class="detail-container">
                     <div class="cover">
@@ -207,10 +271,14 @@
             <div class="card">
                 <img src="3.jpg" alt="3" width="100px" height="160px">
                 <div class="title"><strong>Opacaropwile</strong></div>
-                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>   
+                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>
                 <div class="author">Nama Author</div>
                 <div class="harga">55.000</div>
-                <button class="cart" onclick="pesanProduk('Opacaropwile')">🛒</button>
+                <button class="cart" onclick="pesanProduk('Pulang')">
+                    <svg width="20" height="18" viewBox="0 0 24 24" fill="#1689ff" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z"/>
+                    </svg>
+                </button>
                 <div class="overlay" id="overlay"></div>
                 <div class="detail-container">
                     <div class="cover">
@@ -229,10 +297,14 @@
             <div class="card">
                 <img src="4.jpg" alt="4" width="100px">
                 <div class="title"><strong>Dreams & Stacy</strong></div>
-                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>   
+                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>
                 <div class="author">Nama Author</div>
                 <div class="harga">40.000</div>
-                <button class="cart" onclick="pesanProduk('Dreams & Stacy')">🛒</button>
+                <button class="cart" onclick="pesanProduk('Pulang')">
+                    <svg width="20" height="18" viewBox="0 0 24 24" fill="#1689ff" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z"/>
+                    </svg>
+                </button>
                 <div class="overlay" id="overlay"></div>
                 <div class="detail-container">
                     <div class="cover">
@@ -307,7 +379,8 @@
                     <button class="chapterbacanomik" class="btn" onclick="showBaca(1)">BACA</button>
                 </div>
             </div>
-            <div class="itembacanomik" data-genre="Action,Isekai,Magic, Fantasi" data-status="Complete" data-tipe="Japan" id="TENSURA">
+            <div class="itembacanomik" data-genre="Action,Isekai,Magic, Fantasi" data-status="Complete"
+                data-tipe="Japan" id="TENSURA">
                 <img src="novel2.jpg" alt="Komik 2">
                 <div class="titlebacanomik">That Time I Got Reincarnated as a Slime</div>
                 <div class="infobacanomik">UPDATE</div>
@@ -316,7 +389,8 @@
                     <button class="chapterbacanomik" class="btn" onclick="showBaca(2)">BACA</button>
                 </div>
             </div>
-            <div class="itembacanomik" data-genre="Action,Fantasy,SuperPower" data-status="Ongoing" data-tipe="Korea" id="ORV">
+            <div class="itembacanomik" data-genre="Action,Fantasy,SuperPower" data-status="Ongoing" data-tipe="Korea"
+                id="ORV">
                 <img src="novel3.jpg" alt="Komik 3">
                 <div class="titlebacanomik">Omniscient Reader Viewpoint</div>
                 <div class="infobacanomik">UPDATE</div>
@@ -325,7 +399,8 @@
                     <button class="chapterbacanomik" class="btn" onclick="showBaca(3)">BACA</button>
                 </div>
             </div>
-            <div class="itembacanomik" data-genre="Thriller,Adventure,Mystery, Thriller" data-status="Ongoing" data-tipe="China" id="LOTM">
+            <div class="itembacanomik" data-genre="Thriller,Adventure,Mystery, Thriller" data-status="Ongoing"
+                data-tipe="China" id="LOTM">
                 <img src="novel4.jpeg" alt="Komik 4">
                 <div class="titlebacanomik">Lord of the Mysteries</div>
                 <div class="infobacanomik">UPDATE</div>
@@ -355,7 +430,8 @@
                     <h2>Lunar Festival 2025</h2>
                     <p class="date" style="color: #c5d6ff;">April 21, 2025 | 7:00 PM - 11:00 PM</p>
                     <p class="location">Moonlight Plaza, Tokyo</p>
-                    <p class="description" style="color: #c5d6ff;">Celebrate the Lunar Festival with mesmerizing performances, workshops, and exclusive merch!</p>
+                    <p class="description" style="color: #c5d6ff;">Celebrate the Lunar Festival with mesmerizing
+                        performances, workshops, and exclusive merch!</p>
                     <button class="eventnovel-btn">Register Now</button>
                 </div>
                 <div class="eventnovel-card" onclick="showDetails(this)">
@@ -363,7 +439,8 @@
                     <h2>Astronomy Night</h2>
                     <p class="date" style="color: #c5d6ff;">May 15, 2025 | 8:00 PM - 12:00 AM</p>
                     <p class="location">Star Observatory, Kyoto</p>
-                    <p class="description" style="color: #c5d6ff;">Join us for a night of stargazing, guided by expert astronomers and high-powered telescopes.</p>
+                    <p class="description" style="color: #c5d6ff;">Join us for a night of stargazing, guided by expert
+                        astronomers and high-powered telescopes.</p>
                     <button class="eventnovel-btn">Reserve Spot</button>
                 </div>
                 <div class="eventnovel-card" onclick="showDetails(this)">
@@ -371,7 +448,8 @@
                     <h2>Writers' Workshop</h2>
                     <p class="date" style="color: #c5d6ff;">June 5, 2025 | 2:00 PM - 5:00 PM</p>
                     <p class="location">LunarScribe HQ, Osaka</p>
-                    <p class="description" style="color: #c5d6ff;">Enhance your storytelling skills with bestselling authors and experienced editors.</p>
+                    <p class="description" style="color: #c5d6ff;">Enhance your storytelling skills with bestselling
+                        authors and experienced editors.</p>
                     <button class="eventnovel-btn">Join Now</button>
                 </div>
             </section>
@@ -388,10 +466,32 @@
         </div>
     </div>
 
-    <!-- halaman author -->
+    <!-- halaman web developer -->
 
-    <div class="container" id="author">
-        <h1>pp</h1>
+    <div class="container" id="developer">
+        <div class="containercreator">
+            <header class="headercreator">
+                <h1 class="glow-text">Meet the Web Developer</h1>
+                <p>Visionary Web Architect & Designer</p>
+            </header>
+            <section class="profilecreator">
+                <img src="creator.png" alt="Creator" class="profilecreator-pic">
+                <div class="bio">
+                    <h2 class="glowcreator-text">Zharvian</h2>
+                    <p>"Making LunarScribe the ultimate writer’s playground, one line of code at a time. Stay tuned, besties!📖"</p>
+                    <p>Specialist in immersive web experiences, futuristic UI/UX, and groundbreaking digital design.</p>
+                    <div class="social-links">
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-github"></a>
+                        <a href="#" class="fab fa-linkedin"></a>
+                    </div>
+                </div>
+            </section>
+            <section class="mission">
+                <h3 class="glowcreator-text">My Vision</h3>
+                <p>To create a seamless and empowering platform where writers can easily write, publish, and sell their works while building a thriving literary community in the digital age. </p>
+            </section>
+        </div>
     </div>
 
     <!-- Halaman baca -->
@@ -400,7 +500,7 @@
         <div class="header1">
             <h1 class="judul-novel">Kala Itu Langit Biru</h1>
             <p class="info-novel">
-                Ditulis oleh: <span>Sarah Putri</span> | 
+                Ditulis oleh: <span>Sarah Putri</span> |
                 Rilis: <span>12 Februari 2024</span>
             </p>
         </div>
@@ -432,10 +532,12 @@
             <h3>📺 Platform Baca</h3>
             <div class="platform-container">
                 <div class="platform-box">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Webtoon_logo.svg/1280px-Webtoon_logo.svg.png" alt="Webtoon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Webtoon_logo.svg/1280px-Webtoon_logo.svg.png"
+                        alt="Webtoon">
                 </div>
                 <div class="platform-box">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Google_Play_Books_icon.svg" alt="Google Play Books">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Google_Play_Books_icon.svg"
+                        alt="Google Play Books">
                 </div>
                 <div class="platform-box">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Kindle_logo.png" alt="Kindle">
@@ -443,38 +545,38 @@
             </div>
         </div>
 
-                <!-- Karakter -->
-                <div class="karakter-section">
-                    <h3>Karakter</h3>
-                    <div class="karakter-container">
-                        <div class="karakter-card">
-                            <img src="ca1.jpg" alt="Aira">
-                            <div class="karakter-name">Kei</div>
-                            <p>Seorang karakter utama</p>
-                        </div>
-                        <div class="karakter-card">
-                            <img src="ca2.jpg" alt="Reza">
-                            <div class="karakter-name">Yuna</div>
-                            <p>Wanita misterius yang tahu banyak tentang masa lalu Zharvian.</p>
-                        </div>
-                        <div class="karakter-card">
-                            <img src="ca3.jpg" alt="Nana" width="100px">
-                            <div class="karakter-name">Kei</div>
-                            <p>Sahabat setia Zharvian yang selalu membantunya dalam kesulitan.</p>
-                        </div>
-                    </div>
+        <!-- Karakter -->
+        <div class="karakter-section">
+            <h3>Karakter</h3>
+            <div class="karakter-container">
+                <div class="karakter-card">
+                    <img src="ca1.jpg" alt="Aira">
+                    <div class="karakter-name">Kei</div>
+                    <p>Seorang karakter utama</p>
                 </div>
+                <div class="karakter-card">
+                    <img src="ca2.jpg" alt="Reza">
+                    <div class="karakter-name">Yuna</div>
+                    <p>Wanita misterius yang tahu banyak tentang masa lalu Zharvian.</p>
+                </div>
+                <div class="karakter-card">
+                    <img src="ca3.jpg" alt="Nana" width="100px">
+                    <div class="karakter-name">Kei</div>
+                    <p>Sahabat setia Zharvian yang selalu membantunya dalam kesulitan.</p>
+                </div>
+            </div>
+        </div>
 
         <!-- Tombol Kembali -->
         <button class="btn-back" onclick="closeBaca()">Kembali</button>
     </div>
-    
+
     <div id="2" class="baca-container">
         <!-- Header -->
         <div class="header1">
             <h1 class="judul-novel">Pulang</h1>
             <p class="info-novel">
-                Ditulis oleh: <span>Sarah Putri</span> | 
+                Ditulis oleh: <span>Sarah Putri</span>
                 Rilis: <span>12 Februari 2024</span>
             </p>
         </div>
@@ -506,10 +608,12 @@
             <h3>📺 Platform Baca</h3>
             <div class="platform-container">
                 <div class="platform-box">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Webtoon_logo.svg/1280px-Webtoon_logo.svg.png" alt="Webtoon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Webtoon_logo.svg/1280px-Webtoon_logo.svg.png"
+                        alt="Webtoon">
                 </div>
                 <div class="platform-box">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Google_Play_Books_icon.svg" alt="Google Play Books">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Google_Play_Books_icon.svg"
+                        alt="Google Play Books">
                 </div>
                 <div class="platform-box">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Kindle_logo.png" alt="Kindle">
@@ -517,38 +621,38 @@
             </div>
         </div>
 
-                <!-- Karakter -->
-                <div class="karakter-section">
-                    <h3>Karakter</h3>
-                    <div class="karakter-container">
-                        <div class="karakter-card">
-                            <img src="ca1.jpg" alt="Aira">
-                            <div class="karakter-name">Kei</div>
-                            <p>Seorang karakter utama</p>
-                        </div>
-                        <div class="karakter-card">
-                            <img src="ca2.jpg" alt="Reza">
-                            <div class="karakter-name">Yuna</div>
-                            <p>Wanita misterius yang tahu banyak tentang masa lalu Zharvian.</p>
-                        </div>
-                        <div class="karakter-card">
-                            <img src="ca3.jpg" alt="Nana" width="100px">
-                            <div class="karakter-name">Kei</div>
-                            <p>Sahabat setia Zharvian yang selalu membantunya dalam kesulitan.</p>
-                        </div>
-                    </div>
+        <!-- Karakter -->
+        <div class="karakter-section">
+            <h3>Karakter</h3>
+            <div class="karakter-container">
+                <div class="karakter-card">
+                    <img src="ca1.jpg" alt="Aira">
+                    <div class="karakter-name">Kei</div>
+                    <p>Seorang karakter utama</p>
                 </div>
+                <div class="karakter-card">
+                    <img src="ca2.jpg" alt="Reza">
+                    <div class="karakter-name">Yuna</div>
+                    <p>Wanita misterius yang tahu banyak tentang masa lalu Zharvian.</p>
+                </div>
+                <div class="karakter-card">
+                    <img src="ca3.jpg" alt="Nana" width="100px">
+                    <div class="karakter-name">Kei</div>
+                    <p>Sahabat setia Zharvian yang selalu membantunya dalam kesulitan.</p>
+                </div>
+            </div>
+        </div>
 
         <!-- Tombol Kembali -->
         <button class="btn-back" onclick="closeBaca()">Kembali</button>
     </div>
-    
+
     <div id="3" class="baca-container">
         <!-- Header -->
         <div class="header1">
             <h1 class="judul-novel">Opacaropwile</h1>
             <p class="info-novel">
-                Ditulis oleh: <span>Sarah Putri</span> | 
+                Ditulis oleh: <span>Sarah Putri</span> |
                 Rilis: <span>12 Februari 2024</span>
             </p>
         </div>
@@ -580,10 +684,12 @@
             <h3>📺 Platform Baca</h3>
             <div class="platform-container">
                 <div class="platform-box">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Webtoon_logo.svg/1280px-Webtoon_logo.svg.png" alt="Webtoon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Webtoon_logo.svg/1280px-Webtoon_logo.svg.png"
+                        alt="Webtoon">
                 </div>
                 <div class="platform-box">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Google_Play_Books_icon.svg" alt="Google Play Books">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Google_Play_Books_icon.svg"
+                        alt="Google Play Books">
                 </div>
                 <div class="platform-box">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Kindle_logo.png" alt="Kindle">
@@ -591,38 +697,38 @@
             </div>
         </div>
 
-                <!-- Karakter -->
-                <div class="karakter-section">
-                    <h3>Karakter</h3>
-                    <div class="karakter-container">
-                        <div class="karakter-card">
-                            <img src="ca1.jpg" alt="Aira">
-                            <div class="karakter-name">Kei</div>
-                            <p>Seorang karakter utama</p>
-                        </div>
-                        <div class="karakter-card">
-                            <img src="ca2.jpg" alt="Reza">
-                            <div class="karakter-name">Yuna</div>
-                            <p>Wanita misterius yang tahu banyak tentang masa lalu Zharvian.</p>
-                        </div>
-                        <div class="karakter-card">
-                            <img src="ca3.jpg" alt="Nana" width="100px">
-                            <div class="karakter-name">Kei</div>
-                            <p>Sahabat setia Zharvian yang selalu membantunya dalam kesulitan.</p>
-                        </div>
-                    </div>
+        <!-- Karakter -->
+        <div class="karakter-section">
+            <h3>Karakter</h3>
+            <div class="karakter-container">
+                <div class="karakter-card">
+                    <img src="ca1.jpg" alt="Aira">
+                    <div class="karakter-name">Kei</div>
+                    <p>Seorang karakter utama</p>
                 </div>
+                <div class="karakter-card">
+                    <img src="ca2.jpg" alt="Reza">
+                    <div class="karakter-name">Yuna</div>
+                    <p>Wanita misterius yang tahu banyak tentang masa lalu Zharvian.</p>
+                </div>
+                <div class="karakter-card">
+                    <img src="ca3.jpg" alt="Nana" width="100px">
+                    <div class="karakter-name">Kei</div>
+                    <p>Sahabat setia Zharvian yang selalu membantunya dalam kesulitan.</p>
+                </div>
+            </div>
+        </div>
 
         <!-- Tombol Kembali -->
         <button class="btn-back" onclick="closeBaca()">Kembali</button>
     </div>
-    
+
     <div id="4" class="baca-container">
         <!-- Header -->
         <div class="header1">
             <h1 class="judul-novel">Dreams & Spacy</h1>
             <p class="info-novel">
-                Ditulis oleh: <span>Sarah Putri</span> | 
+                Ditulis oleh: <span>Sarah Putri</span> |
                 Rilis: <span>12 Februari 2024</span>
             </p>
         </div>
@@ -654,10 +760,12 @@
             <h3>📺 Platform Baca</h3>
             <div class="platform-container">
                 <div class="platform-box">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Webtoon_logo.svg/1280px-Webtoon_logo.svg.png" alt="Webtoon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Webtoon_logo.svg/1280px-Webtoon_logo.svg.png"
+                        alt="Webtoon">
                 </div>
                 <div class="platform-box">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Google_Play_Books_icon.svg" alt="Google Play Books">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Google_Play_Books_icon.svg"
+                        alt="Google Play Books">
                 </div>
                 <div class="platform-box">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Kindle_logo.png" alt="Kindle">
@@ -665,34 +773,34 @@
             </div>
         </div>
 
-                <!-- Karakter -->
-                <div class="karakter-section">
-                    <h3>Karakter</h3>
-                    <div class="karakter-container">
-                        <div class="karakter-card">
-                            <img src="ca1.jpg" alt="Aira">
-                            <div class="karakter-name">Kei</div>
-                            <p>Seorang karakter utama</p>
-                        </div>
-                        <div class="karakter-card">
-                            <img src="ca2.jpg" alt="Reza">
-                            <div class="karakter-name">Yuna</div>
-                            <p>Wanita misterius yang tahu banyak tentang masa lalu Zharvian.</p>
-                        </div>
-                        <div class="karakter-card">
-                            <img src="ca3.jpg" alt="Nana" width="100px">
-                            <div class="karakter-name">Kei</div>
-                            <p>Sahabat setia Zharvian yang selalu membantunya dalam kesulitan.</p>
-                        </div>
-                    </div>
+        <!-- Karakter -->
+        <div class="karakter-section">
+            <h3>Karakter</h3>
+            <div class="karakter-container">
+                <div class="karakter-card">
+                    <img src="ca1.jpg" alt="Aira">
+                    <div class="karakter-name">Kei</div>
+                    <p>Seorang karakter utama</p>
                 </div>
+                <div class="karakter-card">
+                    <img src="ca2.jpg" alt="Reza">
+                    <div class="karakter-name">Yuna</div>
+                    <p>Wanita misterius yang tahu banyak tentang masa lalu Zharvian.</p>
+                </div>
+                <div class="karakter-card">
+                    <img src="ca3.jpg" alt="Nana" width="100px">
+                    <div class="karakter-name">Kei</div>
+                    <p>Sahabat setia Zharvian yang selalu membantunya dalam kesulitan.</p>
+                </div>
+            </div>
+        </div>
 
         <!-- Tombol Kembali -->
         <button class="btn-back" onclick="closeBaca()">Kembali</button>
     </div>
 
     <!-- footer -->
-    
+
     <footer class="footer">
         <div class="official-x">
             <h3>★ Official LunarScribe ★</h3>
@@ -700,15 +808,15 @@
                 <a href="https://www.tiktok.com/@zharvian?lang=en" class="social-btn">
                     <img src="furiri1.jpg" alt="tiktok1">
                     <div class="text-container">
-                    <span>Social Media – Tiktok</span>
-                    <span class="username">@Zharvian</span>
+                        <span>Social Media – Tiktok</span>
+                        <span class="username">@Zharvian</span>
                     </div>
                 </a>
                 <a href="https://www.instagram.com/lunarscribestudios/" class="social-btn">
                     <img src="furiri2.jpg" alt="instagram2">
                     <div class="text-container">
-                    <span>Social Media – Instagram</span>
-                    <span class="username">@LunarScribe</span>
+                        <span>Social Media – Instagram</span>
+                        <span class="username">@LunarScribe</span>
                     </div>
                 </a>
             </div>
@@ -729,9 +837,10 @@
             <a href="#">English</a>
         </div>
         <div class="copyright">
-            <p>&copy; LunarScribe – Write Dreams Under the Moonlight</p>
+            <p>&copy; LunarScribe – LunarScribeStudios</p>
         </div>
     </footer>
 
 </body>
+
 </html>
