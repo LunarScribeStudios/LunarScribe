@@ -1,0 +1,1087 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #a4c6ee;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+}
+
+.h3 {
+    color: #485579;
+}
+
+.p {
+    color: #6c7b9f;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #072f7c;
+    color: #a4c6ee;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.banner {
+    background-color: #0756f0;
+    color: #fff;
+    padding: 40px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    padding: 10px 20px;
+}
+
+.website-name {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu>div {
+    position: relative;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content div {
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dropdown-content div:hover {
+    background: #f0f0f0;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.container {
+    display: none;
+    padding: 20px;
+}
+
+/* toko */
+
+#toko {
+    display: block;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background: #1689ff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+    position: relative;
+}
+
+.detail-container {
+    display: none;
+    position: absolute;
+    background: #a4c6ee;
+    border-radius: 10px;
+    padding: 20px;
+    width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+}
+
+.cover img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.title {
+    margin-top: 10px;
+}
+
+.detail-content {
+    margin-left: 20px;
+    flex: 1;
+    text-align: left;
+    position: relative;
+}
+
+.detail-container.active {
+    display: none;
+    transform: scale(1.2);
+}
+
+.tokobutton {
+    margin-top: 7px;
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+}
+
+.tokobutton:hover {
+    color: red;
+}
+
+.author {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btn,
+.cart {
+    background: #a4c6ee;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 4px;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 5px;
+}
+
+.harga {
+    margin-top: 7px;
+    /* Memastikan chapters selalu di bawah */
+    color: #1689ff;
+    background-color: #a4c6ee;
+    padding: 8px;
+    width: 150px;
+    border-radius: 2px;
+    border-color: #007bff;
+    box-shadow: none;
+    font-size: 16px;
+    /* Ukuran teks lebih besar */
+    font-weight: bold;
+    /* Teks menjadi tebal */
+    margin: 0 auto;
+    display: block;
+}
+
+
+.baca-container {
+    display: none;
+    /* Awalnya disembunyikan */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #a4c6ee;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    overflow-y: auto;
+    /* Agar bisa discroll jika isi panjang */
+    z-index: 1000;
+}
+
+/* Header */
+.header1 {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Animasi Warna pada Judul */
+.judul-novel {
+    font-size: 40px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00bfff, #0756f0, #5c00ff);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s infinite linear;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Informasi Novel */
+.info-novel {
+    margin-top: 10px;
+    font-size: 16px;
+    color: gray;
+}
+
+.info-novel span {
+    font-weight: bold;
+    color: black;
+}
+
+/* Sinopsis */
+.sinopsis {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    font-size: 18px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollable Chapter List */
+.chapter-list {
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    background: #a4c6ee;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.chapter-list li {
+    padding: 12px;
+    margin: 5px 0;
+    background: linear-gradient(135deg, #3366ff, #00c6ff);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.chapter-list li:hover {
+    background: linear-gradient(135deg, #00c6ff, #3366ff);
+    transform: scale(1.05);
+}
+
+/* Platform Section */
+.platform-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.platform-section h3 {
+    color: black;
+    font-size: 22px;
+}
+
+.platform-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.platform-box {
+    width: 200px;
+    background: linear-gradient(135deg, #00c6ff, #3366ff);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.platform-box:hover {
+    transform: scale(1.1);
+}
+
+.platform-box img {
+    max-width: 140px;
+    height: auto;
+}
+
+.karakter-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.karakter-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.karakter-card {
+    width: 180px;
+    background: #00c6ff;
+    border: 4px solid #5c00ff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.karakter-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.karakter-name {
+    background: #3366ff;
+    color: white;
+    padding: 8px 0;
+    margin-top: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.karakter-card h4 {
+    margin: 10px 0 5px;
+    color: #ffcc00;
+}
+
+.karakter-card p {
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* Tombol kembali */
+.btn-back {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(135deg, #00c6ff, #3366ff);
+    color: white;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    background: linear-gradient(135deg, #3366ff, #00c6ff);
+    transform: scale(1.05);
+}
+
+/* beranda */
+
+.discover-btn,
+.explore-btn {
+    background-color: #a4c6ee;
+    color: #0756f0;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.discover-btn:hover,
+.explore-btn:hover {
+    background-color: #0756f0;
+}
+
+.mainhome {
+    margin-top: 50px;
+}
+
+.headline {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #bbb;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.top-sectionhome {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1689ff;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.novelhome-list,
+.authorhome-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.novel-card,
+.author-card,
+.review-card {
+    background-color: #a4c6ee;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 250px;
+}
+
+.reviewshome {
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #0756f0;
+    color: #a4c6ee;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.footer {
+    background: #072f7c;
+    color: #a4c6ee;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-family: Arial, sans-serif;
+}
+
+.official-x {
+    margin-bottom: 20px;
+}
+
+.official-x h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 15px;
+    border: 2px solid white;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.social-btn img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.social-btn .text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-btn .text-container span {
+    font-size: 14px;
+}
+
+.social-btn .text-container .username {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.social-btn:hover {
+    background: white;
+    color: blue;
+}
+
+.share-links p {
+    margin-top: 10px;
+}
+
+.share-links img {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+
+.footer-logo img {
+    width: 150px;
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: #a4c6ee;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    /* Centers the nav horizontally */
+    align-items: center;
+    /* Centers the nav vertically */
+    height: auto;
+    /* Ensures nav only takes as much height as necessary */
+}
+
+/* news */
+
+.news {
+    display: flex;
+    gap: 20px;
+    /* Space between the menu items */
+    text-align: center;
+}
+
+.news div {
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.news div:hover {
+    background-color: #f0f0f0;
+    /* Hover effect */
+}
+
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+}
+
+.news-card {
+    background: white;
+    margin: 20px;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.news-card:hover {
+    transform: scale(1.05);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-content h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.news-content p {
+    font-size: 14px;
+    color: #555;
+}
+
+.news-content a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+.modal img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* about */
+.containerabout {
+    width: 80%;
+    margin: 80px auto;
+    background: #1689ff;
+    padding: 80px;
+    border-radius: 30px;
+    box-shadow: 0 0 50px #072f7c;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.containerabout:hover {
+    box-shadow: 0 0 80px #072f7c;
+}
+
+.glowing-borderabout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    box-shadow: 0 0 30px #072f7c;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px #072f7c(255, 215, 0, 0.7);
+    }
+
+    to {
+        box-shadow: 0 0 50px #072f7c(255, 215, 0, 1);
+    }
+}
+
+.h1about {
+    color: #fff;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    border-bottom: 5px solid #a4c6ee;
+    padding-bottom: 15px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px #a4c6ee;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.descriptionabout {
+    font-size: 1.9rem;
+    font-style: italic;
+    margin-bottom: 50px;
+    color: #a4c6ee;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+.about-content {
+    font-size: 1.5rem;
+    line-height: 2.5;
+    text-align: justify;
+    padding: 30px;
+    background: #a4c6ee;
+    border-left: 8px solid #072f7c;
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px rgba(255, 255, 255, 0.3);
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-content:hover {
+    transform: scale(1.05);
+}
+
+.highlightabout {
+    color: #1689ff;
+    font-weight: bold;
+    font-size: 1.7rem;
+}
+
+.animated-icon {
+    font-size: 3.5rem;
+    margin: 20px;
+    color: #1689ff;
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+/* baca komik */
+.searchbacanomik-box input {
+    background-color: #a4c6ee;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+.searchbacanomik-box button,
+.filtersbacanomik button {
+    background-color: #a4c6ee;
+    box-shadow: none;
+    border: #ccc;
+    width: 50px;
+    height: 30px;
+}
+
+.menubacanomik-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1689ff;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menubacanomik {
+    display: flex;
+    gap: 20px;
+}
+
+.menubacanomik a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.filtersbacanomik {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: #1689ff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    border-radius: 8px;
+}
+
+.filtersbacanomik select {
+    background-color: #a4c6ee;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 150px;
+}
+
+.contentbacanomik {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.itembacanomik {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 180px;
+    /* Perbesar ukuran agar lebih luas */
+    height: 330px;
+    /* Sesuaikan tinggi agar lebih besar */
+    background-color: #1689ff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.itembacanomik img {
+    width: 100;
+    /* Pastikan gambar selalu memenuhi lebar */
+    height: 160px;
+    /* Tinggi gambar agar proporsional */
+    object-fit: cover;
+    /* Memastikan gambar tetap rapi */
+    border-radius: 10px;
+    align-self: center;
+    /* Memastikan gambar di tengah */
+}
+
+.itembacanomik .titlebacanomik {
+    font-weight: bold;
+    margin-top: 10px;
+    min-height: 50px;
+    /* Sesuaikan tinggi agar semua titlebacanomik setara */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    /* Sedikit diperbesar */
+}
+
+.itembacanomik .infobacanomik {
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+    margin-top: auto;
+    /* Mendorong infobacanomik ke bawah jika titlebacanomik bervariasi */
+}
+
+.itembacanomik .chaptersbacanomik {
+    margin-top: auto;
+    /* Memastikan chapters selalu di bawah */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.chapterbacanomik {
+    color: black;
+    background-color: #a4c6ee;
+    padding: 5px;
+    border-radius: 0;
+    border-color: #007bff;
+    box-shadow: none;
+    font-size: 12px;
+}
+
+/* event */
+.headernovel {
+    color: #fff;
+    background: linear-gradient(90deg, #007bff, #1689ff);
+    padding: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.tagline {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.countdown-container {
+    margin: 30px 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5);
+}
+
+.eventnovels {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.eventnovel-card {
+    background: linear-gradient(90deg, #1689ff, #5daeff);
+    margin: 20px;
+    padding: 25px;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.eventnovel-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.eventnovel-card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.eventnovel-btn {
+    background: #0756f0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.eventnovel-btn:hover {
+    background: linear-gradient(45deg, #0059b3, #002F6C);
+    transform: scale(1.1);
+}
+
+.location,
+.date,
+.description {
+    margin-top: 10px;
+}
+
+/* Hover effect for text inside eventnovel card */
+.eventnovel-card:hover .location {
+    font-weight: bold;
+    background: linear-gradient(to right, #efefef, #f7f7f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: color 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+.eventnovel-card:hover .date {
+    font-weight: bold;
+    background: linear-gradient(270deg, #4d77c6, #072f7c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: color 0.3s ease-in-out;
+    font-size: 16px;
+}
+
+.eventnovel-card:hover h2 {
+    font-weight: bold;
+    background: linear-gradient(to right, #efefef, #f7f7f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: color 0.3s ease-in-out;
+    font-size: 25px;
+}
+
+.eventnovel-card:hover .description {
+    background: linear-gradient(135deg, #4d77c6, #072f7c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: color 0.3s ease-in-out;
+}
+
+/* modalevent styles */
+.modalevent {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modalevent-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+    color: black;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 28px;
+}

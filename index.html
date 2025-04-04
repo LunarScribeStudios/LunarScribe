@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LunarScribe</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="lunar.css">
+    <script defer src="lunar.js"></script>
+</head>
+<body> 
+
+    <!-- header -->
+
+    <header class="header">
+        <h1 class="logo"><img src="logo.png" alt="LunarScribe Logo"></h1>
+        <div class="menu" id="menu">
+            <div onclick="showPage('beranda')">Home</div>
+            <div onclick="showPage('news')">News</div>
+            <div class="dropdown">
+                <div onclick="toggleDropdown(event, this)">About</div>
+                <div class="dropdown-content">
+                    <div onclick="showPage('about'); event.stopPropagation();">Website</div>
+                    <div onclick="showPage('author'); event.stopPropagation();">Author</div>
+                </div>
+            </div>
+            <div onclick="showPage('event')">Event</div>
+            <div class="dropdown">
+                <div onclick="toggleDropdown(event, this)">Novel</div>
+                <div class="dropdown-content">
+                    <div onclick="showPage('toko'); event.stopPropagation();">Store Novel</div>
+                    <div onclick="showPage('read'); event.stopPropagation();">Read Novel</div>
+                </div>
+            </div>
+            <div onclick="showPage('Leaderboard')">Leaderboard</div>
+        </div>
+    </header>
+    <div class="banner">
+        <h2>Write Dreams Under the Moonlight</h2>
+        <p>At LunarScribe Studios, we bring boundless worlds to life, where every word shines and every story finds its destiny.</p>
+        <p>Explore epic narratives, thrilling mysteries, and inspiring adventures—crafted with dedication for true readers.</p>
+    </div>
+    
+
+    <!-- halaman beranda -->
+
+    <div class="container" id="beranda">
+        <main class="mainhome">
+            <h2 class="headline" style="color: #fff;">Home Page</h2>
+            <p class="description" style="color: #fff;">At LunarScribe Studios, every word holds meaning, and every story is a journey. Discover our works and step into new worlds waiting to be explored.</p>
+            <button class="explore-btn" onclick="showPage('about')" style="color: #007BFF;">About Website</button>
+        </main>
+    
+        <section class="top-sectionhome">
+            <h2>Top Novels This Week</h2>
+            <div class="novelhome-list">
+                <div class="novel-card"><h3>Home Sweet Loan</h3><p>Almira Bastari</p></div>
+                <div class="novel-card"><h3>Look Back</h3><p>Tatsuki Fujimoto</p></div>
+                <div class="novel-card"><h3>Atomic Habits</h3><p>James Clear</p></div>
+            </div>
+        </section>
+    
+        <section class="top-sectionhome">
+            <h2>Top Novels This Month</h2>
+            <div class="novelhome-list">
+                <div class="novel-card"><h3>Orang-orang Biasa</h3><p>Andrea Hirata</p></div>
+                <div class="novel-card"><h3>Hujan</h3><p>Tere Liye</p></div>
+                <div class="novel-card"><h3>Laut Bercerita</h3><p>Leila S. Chudori</p></div>
+            </div>
+        </section>
+    
+        <section class="top-sectionhome">
+            <h2>Top Authors This Month</h2>
+            <div class="authorhome-list">
+                <div class="author-card"><h3>Andrea Hirata</h3><p>selling 5.000.000+ copies worldwide</p></div>
+                <div class="author-card"><h3>Pidi Baiq</h3><p>selling 700.000 copies worldwide</p></div>
+                <div class="author-card"><h3>Eka Kurniawan</h3><p>received international recognition</p></div>
+            </div>
+        </section>
+    
+        <section class="reviewshome">
+            <h2>Reader Reviews</h2>
+            <div class="reviewhome-card">
+                <p>“An amazing experience, I couldn’t put it down!”</p>
+                <h4>- Reader A</h4>
+            </div>
+            <div class="reviewhome-card">
+                <p>“Absolutely phenomenal storytelling.”</p>
+                <h4>- Reader B</h4>
+            </div>
+        </section>
+    </div>
+
+    <!-- halaman news -->
+    <div class="container" id="news">
+        <h1>News</h1>
+        
+        <main>
+            <section class="news-container">
+                <article class="news-card" onclick="openModal('news1.jpg', 'Novel Terbaru yang Menggebrak Pasar', 'John Doe', '1 April 2025', 'Ini adalah isi lengkap dari berita pertama...')">
+                    <img src="news1.jpeg" alt="Berita 1">
+                    <div class="news-content">
+                        <h2>Novel Terbaru yang Menggebrak Pasar</h2>
+                        <p>Novel terbaru dari penulis terkenal telah rilis dan menjadi topik hangat...</p>
+                        <a>Baca selengkapnya</a>
+                    </div>
+                </article>
+            </section>
+        </main>
+        
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img id="modal-image" src="news1.jpeg" alt="News Image">
+                <h2 id="modal-title"></h2>
+                <p><strong>Penulis:</strong> <span id="modal-author"></span></p>
+                <p><strong>Tanggal:</strong> <span id="modal-date"></span></p>
+                <p id="modal-text"></p>
+            </div>
+        </div>
+    
+        <aside class="sidebar">
+            <h3>Berita Populer</h3>
+            <ul>
+                <li><a href="#">5 Novel Fantasi yang Harus Dibaca Tahun Ini</a></li>
+                <li><a href="#">Kisah Perjalanan Seorang Penulis dari Nol</a></li>
+                <li><a href="#">Bagaimana Menulis Novel yang Menarik?</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <!-- halaman about -->
+
+    <div class="container" id="about">
+        <div class="containerabout">
+            <div class="glowing-borderabout"></div>
+            <h1 class="h1about">About LunarScribe</h1>
+            <p class="descriptionabout">"Mewujudkan imajinasi menjadi kenyataan dalam pengalaman membaca yang tiada duanya."</p>
+            
+            <p class="about-content">
+                <i class="fas fa-book-open animated-icon"></i><br>
+                <span class="highlightabout">LunarScribe</span> adalah <span class="highlightabout">perpaduan sempurna</span> antara seni dan teknologi, tempat kata-kata bertransformasi menjadi <span class="highlightabout">emosi yang mendalam</span>. Kami menghadirkan pengalaman membaca yang tidak hanya visual tetapi juga imersif dan penuh kemewahan.
+            </p>
+            
+            <p class="about-content">
+                <i class="fas fa-star animated-icon"></i><br>
+                Dengan <span class="highlightabout">arsitektur digital futuristik</span>, kami menghadirkan ribuan novel eksklusif dengan tampilan yang elegan, pencahayaan yang nyaman, dan mode baca premium yang dirancang untuk meningkatkan kenikmatan literasi.
+            </p>
+            
+            <p class="about-content">
+                <i class="fas fa-feather-alt animated-icon"></i><br>
+                LunarScribe bukan hanya tentang membaca, tetapi juga <span class="highlightabout">menciptakan</span>. Kami menyediakan panggung megah bagi para penulis untuk memperkenalkan karya mereka kepada dunia dengan dukungan komunitas yang hangat dan penuh inspirasi.
+            </p>
+        </div>
+    </div>
+
+    <!-- halaman toko -->
+    
+    <div class="container" id="toko">
+        <img src="toko.jpg" alt="toko" width="700px" height="300">
+        <div class="card-container">
+            <div class="card">
+                <img src="1.jpg" alt="1" width="100px">
+                <div class="title"><strong>Kala Itu Langit Biru</strong></div>
+                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>   
+                <div class="author">Nama Author</div>
+                <div class="harga">50.000</div>
+                <button class="cart" onclick="pesanProduk('Kala Itu Langit Biru')">🛒</button>
+                <div class="overlay" id="overlay"></div>
+                <div class="detail-container">
+                    <div class="cover">
+                        <img src="1.jpg" alt="Cover Novel">
+                    </div>
+                    <div class="detail-content">
+                        <span class="close-btn" onclick="closeDetail()">✖</span>
+                        <p><strong>JUDUL NOVEL:</strong> Nama Judul</p>
+                        <p><strong>NAMA AUTHOR:</strong> Nama Penulis</p>
+                        <p><strong>TANGGAL RILIS:</strong> 20 Maret 2025</p>
+                        <p><strong>SINOPSIS:</strong> Lorem ipsum dolor sit amet...</p>
+                        <p><strong>RATING:</strong> ⭐⭐⭐⭐☆</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="2.jpg" alt="2" width="105px">
+                <div class="title"><strong>Pulang</strong></div>
+                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>   
+                <div class="author">Nama Author</div>
+                <div class="harga">45.000</div>
+                <button class="cart" onclick="pesanProduk('Pulang')">🛒</button>
+                <div class="overlay" id="overlay"></div>
+                <div class="detail-container">
+                    <div class="cover">
+                        <img src="2.jpg" alt="Cover Novel">
+                    </div>
+                    <div class="detail-content">
+                        <span class="close-btn" onclick="closeDetail()">✖</span>
+                        <p><strong>JUDUL NOVEL:</strong> Nama Judul</p>
+                        <p><strong>NAMA AUTHOR:</strong> Nama Penulis</p>
+                        <p><strong>TANGGAL RILIS:</strong> 20 Maret 2025</p>
+                        <p><strong>SINOPSIS:</strong> Lorem ipsum dolor sit amet...</p>
+                        <p><strong>RATING:</strong> ⭐⭐⭐⭐☆</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="3.jpg" alt="3" width="100px" height="160px">
+                <div class="title"><strong>Opacaropwile</strong></div>
+                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>   
+                <div class="author">Nama Author</div>
+                <div class="harga">55.000</div>
+                <button class="cart" onclick="pesanProduk('Opacaropwile')">🛒</button>
+                <div class="overlay" id="overlay"></div>
+                <div class="detail-container">
+                    <div class="cover">
+                        <img src="3.jpg" alt="Cover Novel">
+                    </div>
+                    <div class="detail-content">
+                        <span class="close-btn" onclick="closeDetail()">✖</span>
+                        <p><strong>JUDUL NOVEL:</strong> Nama Judul</p>
+                        <p><strong>NAMA AUTHOR:</strong> Nama Penulis</p>
+                        <p><strong>TANGGAL RILIS:</strong> 20 Maret 2025</p>
+                        <p><strong>SINOPSIS:</strong> Lorem ipsum dolor sit amet...</p>
+                        <p><strong>RATING:</strong> ⭐⭐⭐⭐☆</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="4.jpg" alt="4" width="100px">
+                <div class="title"><strong>Dreams & Stacy</strong></div>
+                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>   
+                <div class="author">Nama Author</div>
+                <div class="harga">40.000</div>
+                <button class="cart" onclick="pesanProduk('Dreams & Stacy')">🛒</button>
+                <div class="overlay" id="overlay"></div>
+                <div class="detail-container">
+                    <div class="cover">
+                        <img src="4.jpg" alt="Cover Novel">
+                    </div>
+                    <div class="detail-content">
+                        <span class="close-btn" onclick="closeDetail()">✖</span>
+                        <p><strong>JUDUL NOVEL:</strong> Nama Judul</p>
+                        <p><strong>NAMA AUTHOR:</strong> Nama Penulis</p>
+                        <p><strong>TANGGAL RILIS:</strong> 20 Maret 2025</p>
+                        <p><strong>SINOPSIS:</strong> Lorem ipsum dolor sit amet...</p>
+                        <p><strong>RATING:</strong> ⭐⭐⭐⭐☆</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- halaman read -->
+
+    <div class="container" id="read">
+        <div class="menubacanomik-container">
+            <div class="menubacanomik">
+                <a href="#" style="color: #a4c6ee;">Terbaru</a>
+                <a href="#" style="color: #a4c6ee;">Novel</a>
+                <a href="#" style="color: #a4c6ee;">Komik</a>
+            </div>
+            <div class="searchbacanomik-box">
+                <input type="text" id="searchInput" placeholder="Cari...">
+                <button onclick="searchNovel()">Cari</button>
+            </div>
+        </div>
+        <div class="filtersbacanomik">
+            <select>
+                <option>Update</option>
+            </select>
+            <select id="genre">
+                <option value="">Genre</option>
+                <option value="Action">Action</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Magic">Magic</option>
+                <option value="Romance">Romance</option>
+                <option value="SoL">Slice Of Life</option>
+                <option value="School">School</option>
+                <option value="Isekai">Isekai</option>
+                <option value="SuperPower">SuperPower</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Fantasy">Fantasy</option>
+            </select>
+            <select id="tipe">
+                <option value="">Type</option>
+                <option value="Japan">Japan</option>
+                <option value="Korea">Korea</option>
+                <option value="China">China</option>
+                <option value="Amerika">Amerika</option>
+            </select>
+            <select id="status">
+                <option value="">Status</option>
+                <option value="Ongoing">Ongoing</option>
+                <option value="Complete">Complete</option>
+            </select>
+            <button onclick="filterContent()">Cari</button>
+        </div>
+        <div class="contentbacanomik">
+            <div class="itembacanomik" data-genre="SoL,Romance" data-status="Ongoing" data-tipe="Japan" id="TAD">
+                <img src="novel1.jpeg" alt="Komik 1">
+                <div class="titlebacanomik">The Apothecary Diaries</div>
+                <div class="infobacanomik">UPDATE</div>
+                <div class="chaptersbacanomik">
+                    <div class="chapterbacanomik">Volume 15 - 2 jam</div>
+                    <button class="chapterbacanomik" class="btn" onclick="showBaca(1)">BACA</button>
+                </div>
+            </div>
+            <div class="itembacanomik" data-genre="Action,Isekai,Magic, Fantasi" data-status="Complete" data-tipe="Japan" id="TENSURA">
+                <img src="novel2.jpg" alt="Komik 2">
+                <div class="titlebacanomik">That Time I Got Reincarnated as a Slime</div>
+                <div class="infobacanomik">UPDATE</div>
+                <div class="chaptersbacanomik">
+                    <div class="chapterbacanomik">Volume 22 - 3 jam</div>
+                    <button class="chapterbacanomik" class="btn" onclick="showBaca(2)">BACA</button>
+                </div>
+            </div>
+            <div class="itembacanomik" data-genre="Action,Fantasy,SuperPower" data-status="Ongoing" data-tipe="Korea" id="ORV">
+                <img src="novel3.jpg" alt="Komik 3">
+                <div class="titlebacanomik">Omniscient Reader Viewpoint</div>
+                <div class="infobacanomik">UPDATE</div>
+                <div class="chaptersbacanomik">
+                    <div class="chapterbacanomik">Volume 7 - 3 jam</div>
+                    <button class="chapterbacanomik" class="btn" onclick="showBaca(3)">BACA</button>
+                </div>
+            </div>
+            <div class="itembacanomik" data-genre="Thriller,Adventure,Mystery, Thriller" data-status="Ongoing" data-tipe="China" id="LOTM">
+                <img src="novel4.jpeg" alt="Komik 4">
+                <div class="titlebacanomik">Lord of the Mysteries</div>
+                <div class="infobacanomik">UPDATE</div>
+                <div class="chaptersbacanomik">
+                    <div class="chapterbacanomik">Volume 8 - 5 jam</div>
+                    <button class="chapterbacanomik" class="btn" onclick="showBaca(4)">BACA</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- halaman event -->
+
+    <div class="container" id="event">
+        <header class="headernovel">
+            <h1>LunarScribe Events</h1>
+            <p class="tagline">Experience the Magic of Exclusive Events</p>
+        </header>
+        <div class="countdown-container">
+            <h2>Next Grand Event Starts In:</h2>
+            <div id="countdown"></div>
+        </div>
+        <main>
+            <section class="eventnovels">
+                <div class="eventnovel-card" onclick="showDetails(this)">
+                    <img src="event1.png" alt="Lunar Festival">
+                    <h2>Lunar Festival 2025</h2>
+                    <p class="date" style="color: #c5d6ff;">April 21, 2025 | 7:00 PM - 11:00 PM</p>
+                    <p class="location">Moonlight Plaza, Tokyo</p>
+                    <p class="description" style="color: #c5d6ff;">Celebrate the Lunar Festival with mesmerizing performances, workshops, and exclusive merch!</p>
+                    <button class="eventnovel-btn">Register Now</button>
+                </div>
+                <div class="eventnovel-card" onclick="showDetails(this)">
+                    <img src="event2.png" alt="Astronomy Night">
+                    <h2>Astronomy Night</h2>
+                    <p class="date" style="color: #c5d6ff;">May 15, 2025 | 8:00 PM - 12:00 AM</p>
+                    <p class="location">Star Observatory, Kyoto</p>
+                    <p class="description" style="color: #c5d6ff;">Join us for a night of stargazing, guided by expert astronomers and high-powered telescopes.</p>
+                    <button class="eventnovel-btn">Reserve Spot</button>
+                </div>
+                <div class="eventnovel-card" onclick="showDetails(this)">
+                    <img src="event3.png" alt="Writers' Workshop">
+                    <h2>Writers' Workshop</h2>
+                    <p class="date" style="color: #c5d6ff;">June 5, 2025 | 2:00 PM - 5:00 PM</p>
+                    <p class="location">LunarScribe HQ, Osaka</p>
+                    <p class="description" style="color: #c5d6ff;">Enhance your storytelling skills with bestselling authors and experienced editors.</p>
+                    <button class="eventnovel-btn">Join Now</button>
+                </div>
+            </section>
+        </main>
+
+        <div id="eventnovel-modal" class="modalevent">
+            <div class="modalevent-content">
+                <span class="close" onclick="closemodalevent()">&times;</span>
+                <h2 id="modalevent-title"></h2>
+                <p id="modalevent-date"></p>
+                <p id="modalevent-location"></p>
+                <p id="modalevent-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- halaman author -->
+
+    <div class="container" id="author">
+        <h1>pp</h1>
+    </div>
+
+    <!-- Halaman baca -->
+    <div id="1" class="baca-container">
+        <!-- Header -->
+        <div class="header1">
+            <h1 class="judul-novel">Kala Itu Langit Biru</h1>
+            <p class="info-novel">
+                Ditulis oleh: <span>Sarah Putri</span> | 
+                Rilis: <span>12 Februari 2024</span>
+            </p>
+        </div>
+
+        <!-- Sinopsis -->
+        <div class="sinopsis">
+            <h3>Sinopsis</h3>
+            <p>
+                Di suatu kota kecil, seorang gadis bernama Aira menemukan buku harian misterius
+                yang mengubah hidupnya. Rahasia yang tersembunyi di dalamnya membawanya ke dalam
+                perjalanan waktu yang tidak pernah ia bayangkan sebelumnya...
+            </p>
+        </div>
+
+        <!-- Scrollable Chapter List -->
+        <div class="chapter-list">
+            <h3>Daftar Chapter</h3>
+            <ul>
+                <li onclick="alert('Baca Chapter 1')">Chapter 1: Awal Perjalanan</li>
+                <li onclick="alert('Baca Chapter 2')">Chapter 2: Rahasia Terungkap</li>
+                <li onclick="alert('Baca Chapter 3')">Chapter 3: Waktu yang Hilang</li>
+                <li onclick="alert('Baca Chapter 4')">Chapter 4: Kenangan yang Tertinggal</li>
+                <li onclick="alert('Baca Chapter 5')">Chapter 5: Pertemuan Tak Terduga</li>
+            </ul>
+        </div>
+
+        <!-- Platform Section -->
+        <div class="platform-section">
+            <h3>📺 Platform Baca</h3>
+            <div class="platform-container">
+                <div class="platform-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Webtoon_logo.svg/1280px-Webtoon_logo.svg.png" alt="Webtoon">
+                </div>
+                <div class="platform-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Google_Play_Books_icon.svg" alt="Google Play Books">
+                </div>
+                <div class="platform-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Kindle_logo.png" alt="Kindle">
+                </div>
+            </div>
+        </div>
+
+                <!-- Karakter -->
+                <div class="karakter-section">
+                    <h3>Karakter</h3>
+                    <div class="karakter-container">
+                        <div class="karakter-card">
+                            <img src="ca1.jpg" alt="Aira">
+                            <div class="karakter-name">Kei</div>
+                            <p>Seorang karakter utama</p>
+                        </div>
+                        <div class="karakter-card">
+                            <img src="ca2.jpg" alt="Reza">
+                            <div class="karakter-name">Yuna</div>
+                            <p>Wanita misterius yang tahu banyak tentang masa lalu Zharvian.</p>
+                        </div>
+                        <div class="karakter-card">
+                            <img src="ca3.jpg" alt="Nana" width="100px">
+                            <div class="karakter-name">Kei</div>
+                            <p>Sahabat setia Zharvian yang selalu membantunya dalam kesulitan.</p>
+                        </div>
+                    </div>
+                </div>
+
+        <!-- Tombol Kembali -->
+        <button class="btn-back" onclick="closeBaca()">Kembali</button>
+    </div>
+    
+    <div id="2" class="baca-container">
+        <!-- Header -->
+        <div class="header1">
+            <h1 class="judul-novel">Pulang</h1>
+            <p class="info-novel">
+                Ditulis oleh: <span>Sarah Putri</span> | 
+                Rilis: <span>12 Februari 2024</span>
+            </p>
+        </div>
+
+        <!-- Sinopsis -->
+        <div class="sinopsis">
+            <h3>Sinopsis</h3>
+            <p>
+                Di suatu kota kecil, seorang gadis bernama Aira menemukan buku harian misterius
+                yang mengubah hidupnya. Rahasia yang tersembunyi di dalamnya membawanya ke dalam
+                perjalanan waktu yang tidak pernah ia bayangkan sebelumnya...
+            </p>
+        </div>
+
+        <!-- Scrollable Chapter List -->
+        <div class="chapter-list">
+            <h3>Daftar Chapter</h3>
+            <ul>
+                <li onclick="alert('Baca Chapter 1')">Chapter 1: Awal Perjalanan</li>
+                <li onclick="alert('Baca Chapter 2')">Chapter 2: Rahasia Terungkap</li>
+                <li onclick="alert('Baca Chapter 3')">Chapter 3: Waktu yang Hilang</li>
+                <li onclick="alert('Baca Chapter 4')">Chapter 4: Kenangan yang Tertinggal</li>
+                <li onclick="alert('Baca Chapter 5')">Chapter 5: Pertemuan Tak Terduga</li>
+            </ul>
+        </div>
+
+        <!-- Platform Section -->
+        <div class="platform-section">
+            <h3>📺 Platform Baca</h3>
+            <div class="platform-container">
+                <div class="platform-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Webtoon_logo.svg/1280px-Webtoon_logo.svg.png" alt="Webtoon">
+                </div>
+                <div class="platform-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Google_Play_Books_icon.svg" alt="Google Play Books">
+                </div>
+                <div class="platform-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Kindle_logo.png" alt="Kindle">
+                </div>
+            </div>
+        </div>
+
+                <!-- Karakter -->
+                <div class="karakter-section">
+                    <h3>Karakter</h3>
+                    <div class="karakter-container">
+                        <div class="karakter-card">
+                            <img src="ca1.jpg" alt="Aira">
+                            <div class="karakter-name">Kei</div>
+                            <p>Seorang karakter utama</p>
+                        </div>
+                        <div class="karakter-card">
+                            <img src="ca2.jpg" alt="Reza">
+                            <div class="karakter-name">Yuna</div>
+                            <p>Wanita misterius yang tahu banyak tentang masa lalu Zharvian.</p>
+                        </div>
+                        <div class="karakter-card">
+                            <img src="ca3.jpg" alt="Nana" width="100px">
+                            <div class="karakter-name">Kei</div>
+                            <p>Sahabat setia Zharvian yang selalu membantunya dalam kesulitan.</p>
+                        </div>
+                    </div>
+                </div>
+
+        <!-- Tombol Kembali -->
+        <button class="btn-back" onclick="closeBaca()">Kembali</button>
+    </div>
+    
+    <div id="3" class="baca-container">
+        <!-- Header -->
+        <div class="header1">
+            <h1 class="judul-novel">Opacaropwile</h1>
+            <p class="info-novel">
+                Ditulis oleh: <span>Sarah Putri</span> | 
+                Rilis: <span>12 Februari 2024</span>
+            </p>
+        </div>
+
+        <!-- Sinopsis -->
+        <div class="sinopsis">
+            <h3>Sinopsis</h3>
+            <p>
+                Di suatu kota kecil, seorang gadis bernama Aira menemukan buku harian misterius
+                yang mengubah hidupnya. Rahasia yang tersembunyi di dalamnya membawanya ke dalam
+                perjalanan waktu yang tidak pernah ia bayangkan sebelumnya...
+            </p>
+        </div>
+
+        <!-- Scrollable Chapter List -->
+        <div class="chapter-list">
+            <h3>Daftar Chapter</h3>
+            <ul>
+                <li onclick="alert('Baca Chapter 1')">Chapter 1: Awal Perjalanan</li>
+                <li onclick="alert('Baca Chapter 2')">Chapter 2: Rahasia Terungkap</li>
+                <li onclick="alert('Baca Chapter 3')">Chapter 3: Waktu yang Hilang</li>
+                <li onclick="alert('Baca Chapter 4')">Chapter 4: Kenangan yang Tertinggal</li>
+                <li onclick="alert('Baca Chapter 5')">Chapter 5: Pertemuan Tak Terduga</li>
+            </ul>
+        </div>
+
+        <!-- Platform Section -->
+        <div class="platform-section">
+            <h3>📺 Platform Baca</h3>
+            <div class="platform-container">
+                <div class="platform-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Webtoon_logo.svg/1280px-Webtoon_logo.svg.png" alt="Webtoon">
+                </div>
+                <div class="platform-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Google_Play_Books_icon.svg" alt="Google Play Books">
+                </div>
+                <div class="platform-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Kindle_logo.png" alt="Kindle">
+                </div>
+            </div>
+        </div>
+
+                <!-- Karakter -->
+                <div class="karakter-section">
+                    <h3>Karakter</h3>
+                    <div class="karakter-container">
+                        <div class="karakter-card">
+                            <img src="ca1.jpg" alt="Aira">
+                            <div class="karakter-name">Kei</div>
+                            <p>Seorang karakter utama</p>
+                        </div>
+                        <div class="karakter-card">
+                            <img src="ca2.jpg" alt="Reza">
+                            <div class="karakter-name">Yuna</div>
+                            <p>Wanita misterius yang tahu banyak tentang masa lalu Zharvian.</p>
+                        </div>
+                        <div class="karakter-card">
+                            <img src="ca3.jpg" alt="Nana" width="100px">
+                            <div class="karakter-name">Kei</div>
+                            <p>Sahabat setia Zharvian yang selalu membantunya dalam kesulitan.</p>
+                        </div>
+                    </div>
+                </div>
+
+        <!-- Tombol Kembali -->
+        <button class="btn-back" onclick="closeBaca()">Kembali</button>
+    </div>
+    
+    <div id="4" class="baca-container">
+        <!-- Header -->
+        <div class="header1">
+            <h1 class="judul-novel">Dreams & Spacy</h1>
+            <p class="info-novel">
+                Ditulis oleh: <span>Sarah Putri</span> | 
+                Rilis: <span>12 Februari 2024</span>
+            </p>
+        </div>
+
+        <!-- Sinopsis -->
+        <div class="sinopsis">
+            <h3>Sinopsis</h3>
+            <p>
+                Di suatu kota kecil, seorang gadis bernama Aira menemukan buku harian misterius
+                yang mengubah hidupnya. Rahasia yang tersembunyi di dalamnya membawanya ke dalam
+                perjalanan waktu yang tidak pernah ia bayangkan sebelumnya...
+            </p>
+        </div>
+
+        <!-- Scrollable Chapter List -->
+        <div class="chapter-list">
+            <h3>Daftar Chapter</h3>
+            <ul>
+                <li onclick="alert('Baca Chapter 1')">Chapter 1: Awal Perjalanan</li>
+                <li onclick="alert('Baca Chapter 2')">Chapter 2: Rahasia Terungkap</li>
+                <li onclick="alert('Baca Chapter 3')">Chapter 3: Waktu yang Hilang</li>
+                <li onclick="alert('Baca Chapter 4')">Chapter 4: Kenangan yang Tertinggal</li>
+                <li onclick="alert('Baca Chapter 5')">Chapter 5: Pertemuan Tak Terduga</li>
+            </ul>
+        </div>
+
+        <!-- Platform Section -->
+        <div class="platform-section">
+            <h3>📺 Platform Baca</h3>
+            <div class="platform-container">
+                <div class="platform-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Webtoon_logo.svg/1280px-Webtoon_logo.svg.png" alt="Webtoon">
+                </div>
+                <div class="platform-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Google_Play_Books_icon.svg" alt="Google Play Books">
+                </div>
+                <div class="platform-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Kindle_logo.png" alt="Kindle">
+                </div>
+            </div>
+        </div>
+
+                <!-- Karakter -->
+                <div class="karakter-section">
+                    <h3>Karakter</h3>
+                    <div class="karakter-container">
+                        <div class="karakter-card">
+                            <img src="ca1.jpg" alt="Aira">
+                            <div class="karakter-name">Kei</div>
+                            <p>Seorang karakter utama</p>
+                        </div>
+                        <div class="karakter-card">
+                            <img src="ca2.jpg" alt="Reza">
+                            <div class="karakter-name">Yuna</div>
+                            <p>Wanita misterius yang tahu banyak tentang masa lalu Zharvian.</p>
+                        </div>
+                        <div class="karakter-card">
+                            <img src="ca3.jpg" alt="Nana" width="100px">
+                            <div class="karakter-name">Kei</div>
+                            <p>Sahabat setia Zharvian yang selalu membantunya dalam kesulitan.</p>
+                        </div>
+                    </div>
+                </div>
+
+        <!-- Tombol Kembali -->
+        <button class="btn-back" onclick="closeBaca()">Kembali</button>
+    </div>
+
+    <!-- footer -->
+    
+    <footer class="footer">
+        <div class="official-x">
+            <h3>★ Official LunarScribe ★</h3>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@zharvian?lang=en" class="social-btn">
+                    <img src="furiri1.jpg" alt="tiktok1">
+                    <div class="text-container">
+                    <span>Social Media – Tiktok</span>
+                    <span class="username">@LunarScribe</span>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/zharvian/" class="social-btn">
+                    <img src="furiri2.jpg" alt="instagram2">
+                    <div class="text-container">
+                    <span>Social Media – Instagram</span>
+                    <span class="username">@LunarScribe</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="share-links">
+            <p>SHARE</p>
+            <a href="#"><img src="x.png" alt="X"></a>
+            <a href="#"><img src="ig.png" alt="IG"></a>
+            <a href="#"><img src="tt.png" alt="TIKTOK"></a>
+        </div>
+        <div class="footer-logo">
+            <img src="logo.png" alt="BanG Dream!">
+        </div>
+        <div class="footer-links">
+            <a href="#">Zharvian</a>
+            <a href="#">Furina</a>
+            <a href="#">Indonesian</a>
+            <a href="#">English</a>
+        </div>
+        <div class="copyright">
+            <p>&copy; LunarScribe – Write Dreams Under the Moonlight</p>
+        </div>
+    </footer>
+
+</body>
+</html>
