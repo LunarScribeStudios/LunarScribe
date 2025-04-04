@@ -121,10 +121,6 @@ body {
 
 /* toko */
 
-#beranda {
-    display: block;
-}
-
 .card-container {
     display: flex;
     justify-content: center;
