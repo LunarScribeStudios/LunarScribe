@@ -175,3 +175,18 @@ function countdown() {
     }, 1000);
 }
 countdown();
+
+function share(platform) {
+    const url = encodeURIComponent("https://lunarscribestudios.github.io/LunarScribe/");
+    let shareUrl = "";
+    
+    if (platform === 'x') {
+        shareUrl = `https://twitter.com/intent/tweet?url=${url}`;
+    } else if (platform === 'ig') {
+        shareUrl = `https://www.instagram.com/direct/new/?text=${url}`;
+    } else if (platform === 'tt') {
+        shareUrl = `https://www.tiktok.com/share?url=${url}`;
+    }
+    
+    window.open(shareUrl, '_blank');
+}
