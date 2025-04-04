@@ -115,7 +115,7 @@ body {
 }
 
 #beranda {
-    display: block !important;
+    display: block;
 }
 
 .container {
