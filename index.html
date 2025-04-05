@@ -24,12 +24,12 @@
             Your browser does not support the video tag.
         </video>
         <div id="game-title">
-                <img src="logo.png" alt="logo" width="650" height="350">
+            <img src="logo.png" alt="logo" width="650" height="350">
         </div>
         <div id="game-title1">
-            <img src="studio.png" alt="logo" width="300" height="200">
-    </div>
-    <div id="game-version">Version 1.09150011</div>
+            <img src="studio.png" alt="logo" width="530" height="300">
+        </div>
+        <div id="game-version">Version 1.09150011</div>
         <div id="progress-bar">
             <div></div>
             <div></div>
@@ -40,7 +40,7 @@
     <!-- header -->
 
     <header class="header">
-        <h1 class="logo"><img src="logo.png" alt="LunarScribe Logo" width="100" height="70"></h1>
+        <h1 class="logo"><img src="logo.png" alt="Lunar Scribe" width="100" height="70"></h1>
         <div class="menu" id="menu">
             <div onclick="showPage('beranda')">Home</div>
             <div onclick="showPage('news')">News</div>
@@ -56,7 +56,7 @@
                 <div onclick="toggleDropdown(event, this)">Novel</div>
                 <div class="dropdown-content">
                     <div onclick="showPage('toko'); event.stopPropagation();">Novel Store</div>
-                    <div onclick="showPage('read'); event.stopPropagation();">Novel Reading</div>
+                    <div onclick="showPage('read'); event.stopPropagation();">Read a Novel</div>
                 </div>
             </div>
             <div onclick="showPage('Leaderboard')">Leaderboard</div>
@@ -74,15 +74,41 @@
     <!-- halaman beranda -->
 
     <div class="container" id="beranda">
+
+        <div class="bannerslide1">
+            <h2 class="headline" style="color: #fff;"><center>Home Page</center></h2>
+            <div class="carousel">
+              <div class="slide1-container" id="carousel">
+                  <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide1"></div>
+                  <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide2"></div>
+                  <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide3"></div>
+                  <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide4"></div>
+                  <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide5"></div>
+                  <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide6"></div>
+                  <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide7"></div>
+                  <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide8"></div>
+                  <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide9"></div>
+                  <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide10"></div>
+              </div>
+
+              <div id="message">COMING SOON</div>
+          
+              <div class="buttons1">
+                <button id="prev">&#10094;</button>
+                <button id="next">&#10095;</button>
+              </div>
+            </div>
+          
+            <div class="dot1-container" id="dots"></div>
+        </div>
         <main class="mainhome">
-            <h2 class="headline" style="color: #fff;">Home Page</h2>
             <p class="description" style="color: #fff;">At LunarScribe Studios, every word holds meaning, and every
                 story is a journey. Discover our works and step into new worlds waiting to be explored.</p>
             <button class="explore-btn" onclick="showPage('about')" style="color: #007BFF;">About Website</button>
         </main>
 
         <section class="top-sectionhome">
-            <h2>Top Novels This Week</h2>
+            <h2 style="color: #fff;">Top Novels This Week</h2>
             <div class="novelhome-list">
                 <div class="novel-card">
                     <h3>Home Sweet Loan</h3>
@@ -100,7 +126,7 @@
         </section>
 
         <section class="top-sectionhome">
-            <h2>Top Novels This Month</h2>
+            <h2 style="color: #fff;">Top Novels This Month</h2>
             <div class="novelhome-list">
                 <div class="novel-card">
                     <h3>Orang-orang Biasa</h3>
@@ -118,7 +144,7 @@
         </section>
 
         <section class="top-sectionhome">
-            <h2>Top Authors This Month</h2>
+            <h2 style="color: #fff;">Top Authors This Month</h2>
             <div class="authorhome-list">
                 <div class="author-card">
                     <h3>Andrea Hirata</h3>
@@ -159,7 +185,8 @@
                     <img src="news1.jpeg" alt="Berita 1">
                     <div class="news-content">
                         <h2 style="color: #fff;">Novel Terbaru yang Menggebrak Pasar</h2>
-                        <p style="color: #cbcfff;">Novel terbaru dari penulis terkenal telah rilis dan menjadi topik hangat...</p>
+                        <p style="color: #cbcfff;">Novel terbaru dari penulis terkenal telah rilis dan menjadi topik
+                            hangat...</p>
                         <a style="color: #072f7c;">Baca selengkapnya</a>
                     </div>
                 </article>
@@ -196,17 +223,22 @@
             <p class="descriptionabout">"Turning imagination into reality in an unparalleled reading experience."</p>
             <p class="about-content">
                 <i class="fas fa-book-open animated-icon"></i><br>
-                <span class="highlightabout">LunarScribe</span> is the <span class="highlightabout">perfect blend</span> of art and technology, where words transform into <span class="highlightabout">deep emotions</span>. We offer a reading experience that is not only visual but also immersive and luxurious.
+                <span class="highlightabout">LunarScribe</span> is the <span class="highlightabout">perfect blend</span>
+                of art and technology, where words transform into <span class="highlightabout">deep emotions</span>. We
+                offer a reading experience that is not only visual but also immersive and luxurious.
             </p>
 
             <p class="about-content">
-                <i class="fas fa-star animated-icon"></i><br>  
-                With a <span class="highlightabout">futuristic digital architecture</span>, we present thousands of exclusive novels with an elegant display, comfortable lighting, and a premium reading mode designed to enhance the joy of literacy.
+                <i class="fas fa-star animated-icon"></i><br>
+                With a <span class="highlightabout">futuristic digital architecture</span>, we present thousands of
+                exclusive novels with an elegant display, comfortable lighting, and a premium reading mode designed to
+                enhance the joy of literacy.
             </p>
             <p class="about-content">
-                <i class="fas fa-feather-alt animated-icon"></i><br>  
-                LunarScribe is not just about reading, but also about <span class="highlightabout">creating</span>.  
-                We provide a grand stage for writers to showcase their works to the world, supported by a warm and inspiring community.
+                <i class="fas fa-feather-alt animated-icon"></i><br>
+                LunarScribe is not just about reading, but also about <span class="highlightabout">creating</span>.
+                We provide a grand stage for writers to showcase their works to the world, supported by a warm and
+                inspiring community.
             </p>
         </div>
     </div>
@@ -224,7 +256,8 @@
                 <div class="harga">50.000</div>
                 <button class="cart" onclick="pesanProduk('Pulang')">
                     <svg width="20" height="18" viewBox="0 0 24 24" fill="#1689ff" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z"/>
+                        <path
+                            d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z" />
                     </svg>
                 </button>
                 <div class="overlay" id="overlay"></div>
@@ -250,9 +283,10 @@
                 <div class="harga">45.000</div>
                 <button class="cart" onclick="pesanProduk('Pulang')">
                     <svg width="20" height="18" viewBox="0 0 24 24" fill="#1689ff" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z"/>
+                        <path
+                            d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z" />
                     </svg>
-                </button>                  
+                </button>
                 <div class="overlay" id="overlay"></div>
                 <div class="detail-container">
                     <div class="cover">
@@ -276,7 +310,8 @@
                 <div class="harga">55.000</div>
                 <button class="cart" onclick="pesanProduk('Pulang')">
                     <svg width="20" height="18" viewBox="0 0 24 24" fill="#1689ff" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z"/>
+                        <path
+                            d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z" />
                     </svg>
                 </button>
                 <div class="overlay" id="overlay"></div>
@@ -302,7 +337,8 @@
                 <div class="harga">40.000</div>
                 <button class="cart" onclick="pesanProduk('Pulang')">
                     <svg width="20" height="18" viewBox="0 0 24 24" fill="#1689ff" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z"/>
+                        <path
+                            d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z" />
                     </svg>
                 </button>
                 <div class="overlay" id="overlay"></div>
@@ -478,7 +514,8 @@
                 <img src="creator.png" alt="Creator" class="profilecreator-pic">
                 <div class="bio">
                     <h2 class="glowcreator-text">Zharvian</h2>
-                    <p>"Making LunarScribe the ultimate writer’s playground, one line of code at a time. Stay tuned, besties!📖"</p>
+                    <p>"Making LunarScribe the ultimate writer’s playground, one line of code at a time. Stay tuned,
+                        besties!📖"</p>
                     <p>Specialist in immersive web experiences, futuristic UI/UX, and groundbreaking digital design.</p>
                     <div class="social-links">
                         <a href="#" class="fab fa-twitter"></a>
@@ -489,8 +526,12 @@
             </section>
             <section class="mission">
                 <h3 class="glowcreator-text">My Vision</h3>
-                <p>To create a seamless and empowering platform where writers can easily write, publish, and sell their works while building a thriving literary community in the digital age. </p>
+                <p>To create a seamless and empowering platform where writers can easily write, publish, and sell their
+                    works while building a thriving literary community in the digital age. </p>
             </section>
+            <section>
+                <a href="https://ramakazuya.github.io/Profil/" target="_blank" style="color: #072f7c;">Baca selengkapnya</a>
+            </section>            
         </div>
     </div>
 
@@ -828,7 +869,7 @@
             <a href="#" onclick="share('tt')"><img src="tt.png" alt="TIKTOK"></a>
         </div>
         <div class="footer-logo">
-            <img src="logo.png" alt="BanG Dream!">
+            <img src="logo.png" alt="Lunar Scribe">
         </div>
         <div class="footer-links">
             <a href="#">Zharvian</a>

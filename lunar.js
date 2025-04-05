@@ -1,9 +1,14 @@
-function showPage(pageId) {
-    var pages = document.querySelectorAll('.container');
-    pages.forEach(page => page.style.display = 'none');
-    document.getElementById(pageId).style.display = 'block';
-    toggleMenu();
-}
+document.addEventListener("DOMContentLoaded", function() {
+    function showPage(pageId) {
+        var pages = document.querySelectorAll('.container');
+        pages.forEach(page => page.style.display = 'none');
+        document.getElementById(pageId).style.display = 'block';
+        toggleMenu();
+    }
+  
+    // expose ke global scope
+    window.showPage = showPage;
+  });
 
 window.onload = function () {
     showPage('beranda'); // Tampilkan halaman Beranda saat pertama kali dimuat
@@ -13,7 +18,7 @@ function pesanProduk(namaProduk) {
     var nomorWA = "6285389311795";
     var teks = "Saya ingin memesan produk *" + namaProduk + "*, apakah masih ada? ";
     var url = "https://wa.me/" + nomorWA + "?text=" + encodeURIComponent(teks);
-    window.location.href = url;
+    window.open(url, '_blank');
 }
 
 // Fungsi untuk membuka detail-container saat tombol "Lihat Detail" ditekan
@@ -278,3 +283,72 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".containercreator").classList.add("fadeIn");
     }, 500);
 });
+
+const slides = document.querySelectorAll(".slide1");
+const dotsContainer = document.getElementById("dots");
+const total = slides.length;
+let index = 0;
+
+for (let i = 0; i < total; i++) {
+    const dot = document.createElement("span");
+    dot.classList.add("dot1");
+    if (i === 0) dot.classList.add("active");
+    dotsContainer.appendChild(dot);
+}
+const dots = document.querySelectorAll(".dot1");
+
+function updateCarousel() {
+    slides.forEach(slide => slide.className = "slide1");
+
+    let left = (index - 1 + total) % total;
+    let centerLeft = index;
+    let centerRight = (index + 1) % total;
+    let right = (index + 2) % total;
+
+    slides[left].classList.add("left1");
+    slides[centerLeft].classList.add("center1-left");
+    slides[centerRight].classList.add("center1-right");
+    slides[right].classList.add("right1");
+
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+}
+
+function nextSlide() {
+    index = (index + 1) % total;
+    updateCarousel();
+}
+
+function prevSlide() {
+    index = (index - 1 + total) % total;
+    updateCarousel();
+}
+
+document.getElementById("next").addEventListener("click", () => {
+    nextSlide();
+    resetAutoSlide();
+});
+
+document.getElementById("prev").addEventListener("click", () => {
+    prevSlide();
+    resetAutoSlide();
+});
+
+let auto = setInterval(nextSlide, 2000);
+
+function resetAutoSlide() {
+    clearInterval(auto);
+    auto = setInterval(nextSlide, 2000);
+}
+
+updateCarousel();
+
+function ShowMessage() {
+    const msg = document.getElementById('message');
+    msg.style.display = 'block';
+
+    // Sembunyikan setelah 3 detik
+    setTimeout(() => {
+      msg.style.display = 'none';
+    }, 3000);
+  }
