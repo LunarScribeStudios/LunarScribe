@@ -657,17 +657,21 @@ canvas {
 /* beranda */
 
 .bannerslide1 {
-    background: linear-gradient(135deg, #3366ff, #0756f0,);
-padding: 20px;
-border-radius: 200px;
-box-shadow: 0 10px 30px rgba(37, 106, 244, 0.863);
-width: 80vw;               /* Lebar maksimal 80% dari layar */
-max-height: 350px;
-max-width: 1650px;         /* Biar di layar besar gak terlalu gede */
-aspect-ratio: 16 / 6;      /* Rasio 16:6 tetap terjaga */
-margin: 10px auto 0 auto;  /* Jarak dari atas dan center */
-position: relative;
-border: 5px solid #1689ff;
+    background: linear-gradient(135deg, #3366ff, #0756f0, );
+    padding: 20px;
+    border-radius: 200px;
+    box-shadow: 0 10px 30px rgba(37, 106, 244, 0.863);
+    width: 80vw;
+    /* Lebar maksimal 80% dari layar */
+    max-height: 350px;
+    max-width: 1650px;
+    /* Biar di layar besar gak terlalu gede */
+    aspect-ratio: 16 / 6;
+    /* Rasio 16:6 tetap terjaga */
+    margin: 10px auto 0 auto;
+    /* Jarak dari atas dan center */
+    position: relative;
+    border: 5px solid #1689ff;
 }
 
 #message {
@@ -684,124 +688,126 @@ border: 5px solid #1689ff;
     display: none;
     z-index: 9999;
     border-bottom: 5px solid #072f7c;
-  }
+}
 
 .carousel {
     right: 15px;
-  position: relative;
-  width: 90vw;
-  max-height: 400px;
-  max-width: 1650px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+    position: relative;
+    width: 90vw;
+    max-height: 400px;
+    max-width: 1650px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .slide1-container {
-  display: flex;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .slide1 {
     display: inline-block;
-  cursor: pointer;
-  position: absolute;
-  width: 20%;
-  transition: all 0.5s ease-in-out;
-  opacity: 0;
-  transform: scale(0.8);
-  border: 5px solid #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  z-index: 1;
+    cursor: pointer;
+    position: absolute;
+    width: 20%;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    transform: scale(0.8);
+    border: 5px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .slide1 img {
-  width: 100%;
-  display: block;
+    width: 100%;
+    display: block;
 }
 
 .left1 {
-  left: 5%;
-  opacity: 0.5;
-  transform: scale(0.6);
-  z-index: 0;
+    left: 5%;
+    opacity: 0.5;
+    transform: scale(0.6);
+    z-index: 0;
 }
 
 .left1::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .center1-left {
-  left: 28%;
-  transform: scale(1);
-  opacity: 1;
-  z-index: 3;
+    left: 28%;
+    transform: scale(1);
+    opacity: 1;
+    z-index: 3;
 }
 
 .center1-right {
-  left: 52%;
-  transform: scale(1);
-  opacity: 1;
-  z-index: 3;
+    left: 52%;
+    transform: scale(1);
+    opacity: 1;
+    z-index: 3;
 }
 
 .right1 {
-  left: 75%;
-  opacity: 0.8;
-  transform: scale(0.7);
-  z-index: 2;
+    left: 75%;
+    opacity: 0.8;
+    transform: scale(0.7);
+    z-index: 2;
 }
 
 .dot1-container {
-  margin-top: 20px;
-  text-align: center;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .dot1 {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin: 5px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform 0.3s;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
 }
 
 .dot1.active {
-  transform: scale(1.5);
-  background-color: #007BFF;
+    transform: scale(1.5);
+    background-color: #007BFF;
 }
 
 .buttons1 {
-left: 25px;
-  position: absolute;
-  top: 50%;
-  width: 95%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  z-index: 5;
+    left: 25px;
+    position: absolute;
+    top: 50%;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 5;
 }
 
 .buttons1 button {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 .discover-btn,

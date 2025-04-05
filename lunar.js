@@ -1,14 +1,14 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     function showPage(pageId) {
         var pages = document.querySelectorAll('.container');
         pages.forEach(page => page.style.display = 'none');
         document.getElementById(pageId).style.display = 'block';
         toggleMenu();
     }
-  
+
     // expose ke global scope
     window.showPage = showPage;
-  });
+});
 
 window.onload = function () {
     showPage('beranda'); // Tampilkan halaman Beranda saat pertama kali dimuat
@@ -349,6 +349,6 @@ function ShowMessage() {
 
     // Sembunyikan setelah 3 detik
     setTimeout(() => {
-      msg.style.display = 'none';
+        msg.style.display = 'none';
     }, 3000);
-  }
+}
