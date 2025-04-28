@@ -18,24 +18,6 @@
     <!-- Loading Screen -->
     <canvas id="starsCanvas"></canvas>
     <div class="animated-bg"></div>
-    <div id="loading">
-        <video id="loading-video" autoplay muted loop>
-            <source src="load.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div id="game-title">
-            <img src="logo.png" alt="logo" width="650" height="350">
-        </div>
-        <div id="game-title1">
-            <img src="studio.png" alt="logo" width="530" height="300">
-        </div>
-        <div id="game-version">Version 1.09150011</div>
-        <div id="progress-bar">
-            <div></div>
-            <div></div>
-        </div>
-        <button id="start-button">Go To The Website</button>
-    </div>
 
     <!-- header -->
 
@@ -247,118 +229,30 @@
 
     <!-- halaman toko -->
 
-    <div class="container" id="toko">
-        <img src="toko.jpg" alt="toko" width="700px" height="300">
-        <div class="card-container">
-            <div class="card">
-                <img src="1.jpg" alt="1" width="100px">
-                <div class="title"><strong>Kala Itu Langit Biru</strong></div>
-                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>
-                <div class="author">Nama Author</div>
-                <div class="harga">50.000</div>
-                <button class="cart" onclick="pesanProduk('Pulang')">
-                    <svg width="20" height="18" viewBox="0 0 24 24" fill="#1689ff" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z" />
-                    </svg>
-                </button>
-                <div class="overlay" id="overlay"></div>
-                <div class="detail-container">
-                    <div class="cover">
-                        <img src="1.jpg" alt="Cover Novel">
-                    </div>
-                    <div class="detail-content">
-                        <span class="close-btn" onclick="closeDetail()">✖</span>
-                        <p><strong>JUDUL NOVEL:</strong> Nama Judul</p>
-                        <p><strong>NAMA AUTHOR:</strong> Nama Penulis</p>
-                        <p><strong>TANGGAL RILIS:</strong> 20 Maret 2025</p>
-                        <p><strong>SINOPSIS:</strong> Lorem ipsum dolor sit amet...</p>
-                        <p><strong>RATING:</strong> ⭐⭐⭐⭐☆</p>
-                    </div>
-                </div>
+    <div class="container" id="toko" style="text-align: center; margin-top: 80px; margin-bottom: 80px;">
+        <section style="display: flex; justify-content: center; align-items: center; min-height: 90vh; background: transparent;">
+            <div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 50px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.25); max-width: 700px; margin: 40px 20px;">
+          
+              <img src="toko.jpg" 
+                   alt="Maintenance" 
+                   style="width: 100%; max-width: 500px; border-radius: 16px; margin-bottom: 30px; box-shadow: 0px 8px 20px rgba(0,0,0,0.3);">
+          
+              <h1 style="font-family: 'Poppins', sans-serif; font-size: 2.5rem; color: #ffffff; font-weight: 700; margin-bottom: 20px;">
+                Selamat Datang di Toko Resmi LunarScribe!
+              </h1>
+          
+              <p style="font-family: 'Poppins', sans-serif; font-size: 1.1rem; color: #cbd5e1; line-height: 1.8; margin-bottom: 30px;">
+                Jelajahi koleksi eksklusif, novel-novel, dan berbagai kejutan menarik.  
+                Yuk mulai petualanganmu bersama LunarScribe!
+              </p>
+          
+              <a href="https://lunarscribestudios.github.io/Store/" 
+                 style="display: inline-block; padding: 14px 36px; background: linear-gradient(135deg, #002df4, #007BFF); color: #ffffff; font-weight: 600; border-radius: 50px; font-size: 1.1rem; text-decoration: none; box-shadow: 0 6px 20px rgba(102,126,234,0.5); transition: all 0.3s ease;">
+                Masuk ke Toko
+              </a>
+          
             </div>
-            <div class="card">
-                <img src="2.jpg" alt="2" width="105px">
-                <div class="title"><strong>Pulang</strong></div>
-                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>
-                <div class="author">Nama Author</div>
-                <div class="harga">45.000</div>
-                <button class="cart" onclick="pesanProduk('Pulang')">
-                    <svg width="20" height="18" viewBox="0 0 24 24" fill="#1689ff" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z" />
-                    </svg>
-                </button>
-                <div class="overlay" id="overlay"></div>
-                <div class="detail-container">
-                    <div class="cover">
-                        <img src="2.jpg" alt="Cover Novel">
-                    </div>
-                    <div class="detail-content">
-                        <span class="close-btn" onclick="closeDetail()">✖</span>
-                        <p><strong>JUDUL NOVEL:</strong> Nama Judul</p>
-                        <p><strong>NAMA AUTHOR:</strong> Nama Penulis</p>
-                        <p><strong>TANGGAL RILIS:</strong> 20 Maret 2025</p>
-                        <p><strong>SINOPSIS:</strong> Lorem ipsum dolor sit amet...</p>
-                        <p><strong>RATING:</strong> ⭐⭐⭐⭐☆</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="3.jpg" alt="3" width="100px" height="160px">
-                <div class="title"><strong>Opacaropwile</strong></div>
-                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>
-                <div class="author">Nama Author</div>
-                <div class="harga">55.000</div>
-                <button class="cart" onclick="pesanProduk('Pulang')">
-                    <svg width="20" height="18" viewBox="0 0 24 24" fill="#1689ff" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z" />
-                    </svg>
-                </button>
-                <div class="overlay" id="overlay"></div>
-                <div class="detail-container">
-                    <div class="cover">
-                        <img src="3.jpg" alt="Cover Novel">
-                    </div>
-                    <div class="detail-content">
-                        <span class="close-btn" onclick="closeDetail()">✖</span>
-                        <p><strong>JUDUL NOVEL:</strong> Nama Judul</p>
-                        <p><strong>NAMA AUTHOR:</strong> Nama Penulis</p>
-                        <p><strong>TANGGAL RILIS:</strong> 20 Maret 2025</p>
-                        <p><strong>SINOPSIS:</strong> Lorem ipsum dolor sit amet...</p>
-                        <p><strong>RATING:</strong> ⭐⭐⭐⭐☆</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="4.jpg" alt="4" width="100px">
-                <div class="title"><strong>Dreams & Stacy</strong></div>
-                <button class="tokobutton" onclick="openDetail(this)">Lihat Detail</button>
-                <div class="author">Nama Author</div>
-                <div class="harga">40.000</div>
-                <button class="cart" onclick="pesanProduk('Pulang')">
-                    <svg width="20" height="18" viewBox="0 0 24 24" fill="#1689ff" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M7 4H3V6H4L7.68 14.39L6.24 17C5.53 18.37 6.48 20 8 20H19V18H8L9.1 16H17.55C18.3 16 18.96 15.59 19.3 14.97L22.88 8.48C23.26 7.81 22.76 7 22 7H7.42L6.63 5H7V4ZM9 18C8.45 18 8 18.45 8 19C8 19.55 8.45 20 9 20C9.55 20 10 19.55 10 19C10 18.45 9.55 18 9 18ZM18 18C17.45 18 17 18.45 17 19C17 19.55 17.45 20 18 20C18.55 20 19 19.55 19 19C19 18.45 18.55 18 18 18Z" />
-                    </svg>
-                </button>
-                <div class="overlay" id="overlay"></div>
-                <div class="detail-container">
-                    <div class="cover">
-                        <img src="4.jpg" alt="Cover Novel">
-                    </div>
-                    <div class="detail-content">
-                        <span class="close-btn" onclick="closeDetail()">✖</span>
-                        <p><strong>JUDUL NOVEL:</strong> Nama Judul</p>
-                        <p><strong>NAMA AUTHOR:</strong> Nama Penulis</p>
-                        <p><strong>TANGGAL RILIS:</strong> 20 Maret 2025</p>
-                        <p><strong>SINOPSIS:</strong> Lorem ipsum dolor sit amet...</p>
-                        <p><strong>RATING:</strong> ⭐⭐⭐⭐☆</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+          </section>          
     </div>
 
     <!-- halaman read -->
