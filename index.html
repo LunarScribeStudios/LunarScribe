@@ -41,7 +41,7 @@
                     <div onclick="showPage('read'); event.stopPropagation();">Read a Novel</div>
                 </div>
             </div>
-            <div onclick="showPage('Leaderboard')">Leaderboard</div>
+            <div onclick="showPage('Testimonial')">Testimonial</div>
         </div>
     </header>
     <div class="banner">
@@ -63,7 +63,7 @@
             </h2>
             <div class="carousel">
                 <div class="slide1-container" id="carousel">
-                    <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide1"></div>
+                    <div class="slide1" onclick="ShowMessage()"><img src="1m1m.png" alt="slide1"></div>
                     <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide2"></div>
                     <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide3"></div>
                     <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide4"></div>
@@ -160,17 +160,19 @@
 
     <!-- halaman news -->
     <div class="container" id="news">
-        <h1 style="color: #fff;">News</h1>
+        <header class="headernovel">
+            <h1>LunarScribe News</h1>
+            <p class="tagline">Latest News by LunarScribe</p>
+        </header>
 
         <main>
             <section class="news-container">
                 <article class="news-card"
-                    onclick="openModal('news1.jpeg', 'Novel Terbaru yang Menggebrak Pasar', 'John Doe', '1 April 2025', 'Ini adalah isi lengkap dari berita pertama...')">
-                    <img src="news1.jpeg" alt="Berita 1">
+                    onclick="openModal('1m1m.png', 'Sedang Diskon Novel Terbaru Hanya Seharga Rp10.000', 'Zharvian', '20 Mei 2025', 'Salah satu novelist yang bernama bearv sedang memberikan diskon kepada novel barunya dengan harga hanya Rp10.000 dan sudah termasuk biaya admin, tunggu apa lagi? ayo beli sekarang sebelum kehabisan')">
+                    <img src="1m1m.png" alt="Berita 1">
                     <div class="news-content">
-                        <h2 style="color: #fff;">Novel Terbaru yang Menggebrak Pasar</h2>
-                        <p style="color: #cbcfff;">Novel terbaru dari penulis terkenal telah rilis dan menjadi topik
-                            hangat...</p>
+                        <h2 style="color: #fff;">Sedang Diskon Novel Terbaru Hanya Seharga Rp10.000</h2>
+                        <p style="color: #cbcfff;">Karya terbaru dari salah satu novelist sedang diskon</p>
                         <a style="color: #072f7c;">Baca selengkapnya</a>
                     </div>
                 </article>
@@ -230,29 +232,32 @@
     <!-- halaman toko -->
 
     <div class="container" id="toko" style="text-align: center; margin-top: 80px; margin-bottom: 80px;">
-        <section style="display: flex; justify-content: center; align-items: center; min-height: 90vh; background: transparent;">
-            <div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 50px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.25); max-width: 700px; margin: 40px 20px;">
-          
-              <img src="toko.jpg" 
-                   alt="Maintenance" 
-                   style="width: 100%; max-width: 500px; border-radius: 16px; margin-bottom: 30px; box-shadow: 0px 8px 20px rgba(0,0,0,0.3);">
-          
-              <h1 style="font-family: 'Poppins', sans-serif; font-size: 2.5rem; color: #ffffff; font-weight: 700; margin-bottom: 20px;">
-                Selamat Datang di Toko Resmi LunarScribe!
-              </h1>
-          
-              <p style="font-family: 'Poppins', sans-serif; font-size: 1.1rem; color: #cbd5e1; line-height: 1.8; margin-bottom: 30px;">
-                Jelajahi koleksi eksklusif, novel-novel, dan berbagai kejutan menarik.  
-                Yuk mulai petualanganmu bersama LunarScribe!
-              </p>
-          
-              <a href="https://lunarscribestudios.github.io/Store/" 
-                 style="display: inline-block; padding: 14px 36px; background: linear-gradient(135deg, #002df4, #007BFF); color: #ffffff; font-weight: 600; border-radius: 50px; font-size: 1.1rem; text-decoration: none; box-shadow: 0 6px 20px rgba(102,126,234,0.5); transition: all 0.3s ease;">
-                Masuk ke Toko
-              </a>
-          
+        <section
+            style="display: flex; justify-content: center; align-items: center; min-height: 90vh; background: transparent;">
+            <div
+                style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 50px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.25); max-width: 700px; margin: 40px 20px;">
+
+                <img src="toko.jpg" alt="Maintenance"
+                    style="width: 100%; max-width: 500px; border-radius: 16px; margin-bottom: 30px; box-shadow: 0px 8px 20px rgba(0,0,0,0.3);">
+
+                <h1
+                    style="font-family: 'Poppins', sans-serif; font-size: 2.5rem; color: #ffffff; font-weight: 700; margin-bottom: 20px;">
+                    Welcome to the Official LunarScribe Store!
+                </h1>
+
+                <p
+                    style="font-family: 'Poppins', sans-serif; font-size: 1.1rem; color: #cbd5e1; line-height: 1.8; margin-bottom: 30px;">
+                    Explore exclusive collections, novels, and exciting surprises.
+                    Start your adventure with LunarScribe now!
+                </p>
+
+                <a href="https://lunarscribestudios.github.io/Store/"
+                    style="display: inline-block; padding: 14px 36px; background: linear-gradient(135deg, #002df4, #007BFF); color: #ffffff; font-weight: 600; border-radius: 50px; font-size: 1.1rem; text-decoration: none; box-shadow: 0 6px 20px rgba(102,126,234,0.5); transition: all 0.3s ease;">
+                    Go to the LunarScribe Store
+                </a>
+
             </div>
-          </section>          
+        </section>
     </div>
 
     <!-- halaman read -->
@@ -286,6 +291,7 @@
                 <option value="Mystery">Mystery</option>
                 <option value="Thriller">Thriller</option>
                 <option value="Fantasy">Fantasy</option>
+                <option value="Sad">Sad</option>
             </select>
             <select id="tipe">
                 <option value="">Type</option>
@@ -293,6 +299,7 @@
                 <option value="Korea">Korea</option>
                 <option value="China">China</option>
                 <option value="Amerika">Amerika</option>
+                <option value="Indonesia">Indonesia</option>
             </select>
             <select id="status">
                 <option value="">Status</option>
@@ -302,42 +309,41 @@
             <button onclick="filterContent()">Cari</button>
         </div>
         <div class="contentbacanomik">
-            <div class="itembacanomik" data-genre="SoL,Romance" data-status="Ongoing" data-tipe="Japan" id="TAD">
-                <img src="novel1.jpeg" alt="Komik 1">
-                <div class="titlebacanomik">The Apothecary Diaries</div>
-                <div class="infobacanomik">UPDATE</div>
+            <div class="itembacanomik" data-genre="Romance, SoL" data-status="Complete" data-tipe="Indonesia" id="OY">
+                <img src="OnlyYou.jpg" alt="Komik 1">
+                <div class="titlebacanomik">Only You</div>
+                <div class="infobacanomik">Complete</div>
                 <div class="chaptersbacanomik">
-                    <div class="chapterbacanomik">Volume 15 - 2 jam</div>
+                    <div class="chapterbacanomik">6 Month Ago</div>
                     <button class="chapterbacanomik" class="btn" onclick="showBaca(1)">BACA</button>
                 </div>
             </div>
-            <div class="itembacanomik" data-genre="Action,Isekai,Magic, Fantasi" data-status="Complete"
-                data-tipe="Japan" id="TENSURA">
-                <img src="novel2.jpg" alt="Komik 2">
-                <div class="titlebacanomik">That Time I Got Reincarnated as a Slime</div>
-                <div class="infobacanomik">UPDATE</div>
+            <div class="itembacanomik" data-genre="Romance" data-status="Complete" data-tipe="Indonesia" id="TL">
+                <img src="TL.png" alt="Komik 2">
+                <div class="titlebacanomik">True Love</div>
+                <div class="infobacanomik">Complete</div>
                 <div class="chaptersbacanomik">
-                    <div class="chapterbacanomik">Volume 22 - 3 jam</div>
+                    <div class="chapterbacanomik">Unknown</div>
                     <button class="chapterbacanomik" class="btn" onclick="showBaca(2)">BACA</button>
                 </div>
             </div>
-            <div class="itembacanomik" data-genre="Action,Fantasy,SuperPower" data-status="Ongoing" data-tipe="Korea"
-                id="ORV">
-                <img src="novel3.jpg" alt="Komik 3">
-                <div class="titlebacanomik">Omniscient Reader Viewpoint</div>
-                <div class="infobacanomik">UPDATE</div>
+            <div class="itembacanomik" data-genre="Romance, Sad" data-status="Complete" data-tipe="Indonesia"
+                id="P">
+                <img src="P.png" alt="Komik 3">
+                <div class="titlebacanomik">Penyesalan</div>
+                <div class="infobacanomik">Complete</div>
                 <div class="chaptersbacanomik">
-                    <div class="chapterbacanomik">Volume 7 - 3 jam</div>
+                    <div class="chapterbacanomik">Unknown</div>
                     <button class="chapterbacanomik" class="btn" onclick="showBaca(3)">BACA</button>
                 </div>
             </div>
-            <div class="itembacanomik" data-genre="Thriller,Adventure,Mystery, Thriller" data-status="Ongoing"
-                data-tipe="China" id="LOTM">
-                <img src="novel4.jpeg" alt="Komik 4">
-                <div class="titlebacanomik">Lord of the Mysteries</div>
-                <div class="infobacanomik">UPDATE</div>
+            <div class="itembacanomik" data-genre="Romance, Sad, SoL" data-status="Complete" data-tipe="Indonesia"
+                id="DT">
+                <img src="DT.png" alt="Komik 4">
+                <div class="titlebacanomik">Dipermainkan Takdir</div>
+                <div class="infobacanomik">Complete</div>
                 <div class="chaptersbacanomik">
-                    <div class="chapterbacanomik">Volume 8 - 5 jam</div>
+                    <div class="chapterbacanomik">Unknown</div>
                     <button class="chapterbacanomik" class="btn" onclick="showBaca(4)">BACA</button>
                 </div>
             </div>
@@ -360,7 +366,7 @@
                 <div class="eventnovel-card" onclick="showDetails(this)">
                     <img src="event1.png" alt="Lunar Festival">
                     <h2>Lunar Festival 2025</h2>
-                    <p class="date" style="color: #c5d6ff;">April 21, 2025 | 7:00 PM - 11:00 PM</p>
+                    <p class="date" style="color: #c5d6ff;">May 25, 2025 | 7:00 PM - 11:00 PM</p>
                     <p class="location">Moonlight Plaza, Tokyo</p>
                     <p class="description" style="color: #c5d6ff;">Celebrate the Lunar Festival with mesmerizing
                         performances, workshops, and exclusive merch!</p>
@@ -369,7 +375,7 @@
                 <div class="eventnovel-card" onclick="showDetails(this)">
                     <img src="event2.png" alt="Astronomy Night">
                     <h2>Astronomy Night</h2>
-                    <p class="date" style="color: #c5d6ff;">May 15, 2025 | 8:00 PM - 12:00 AM</p>
+                    <p class="date" style="color: #c5d6ff;">May 29, 2025 | 8:00 PM - 12:00 AM</p>
                     <p class="location">Star Observatory, Kyoto</p>
                     <p class="description" style="color: #c5d6ff;">Join us for a night of stargazing, guided by expert
                         astronomers and high-powered telescopes.</p>
@@ -432,14 +438,106 @@
         </div>
     </div>
 
+    <!-- Halaman Testimoni -->
+    <div class="container" id="Testimonial">
+        <header class="headernovel">
+            <h1>LunarScribe Testimonial</h1>
+            <p class="tagline">Payment review from the buyer</p>
+        </header>
+        <h2 class="testimonial-title"></h2>
+        <div class="testimonial-row-scroll">
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi1.jpg" alt="Testimoni 1" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 1</p>
+                    <p class="testimonial-text">"Only You"</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi2.jpg" alt="Testimoni 2" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 2</p>
+                    <p class="testimonial-text">"Only You"</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi3.jpg" alt="Testimoni 3" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 3</p>
+                    <p class="testimonial-text">"1 Miliar Satu Malam"</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi4.jpg" alt="Testimoni 4" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 4</p>
+                    <p class="testimonial-text">"1 Miliar Satu Malam"</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi5.jpg" alt="Testimoni 5" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 5</p>
+                    <p class="testimonial-text">"1 Miliar Satu Malam"</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi8.jpg" alt="Testimoni 6" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 6</p>
+                    <p class="testimonial-text">"1 Miliar Satu Malam"</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi6.jpg" alt="Testimoni 7" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 7</p>
+                    <p class="testimonial-text">"1 Miliar Satu Malam"</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi7.jpg" alt="Testimoni 7" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 8</p>
+                    <p class="testimonial-text">"1 Miliar Satu Malam"</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi9.jpg" alt="Testimoni 8" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 9</p>
+                    <p class="testimonial-text">"1 Miliar Satu Malam"</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Popup Overlay -->
+        <div id="popup" class="popup-overlay" onclick="closePopup(event)">
+            <span class="close-btn" onclick="closePopup(event)">✕</span>
+            <img id="popup-img" src="" alt="Popup Image">
+        </div>
+    </div>
+
+
+
     <!-- Halaman baca -->
     <div id="1" class="baca-container">
         <!-- Header -->
         <div class="header1">
-            <h1 class="judul-novel">Kala Itu Langit Biru</h1>
+            <h1 class="judul-novel">Only You</h1>
             <p class="info-novel">
-                Ditulis oleh: <span>Sarah Putri</span> |
-                Rilis: <span>12 Februari 2024</span>
+                Ditulis oleh: <span>bearv</span> |
+                Rilis: <span>7 Desember 2024</span>
             </p>
         </div>
 
@@ -512,10 +610,10 @@
     <div id="2" class="baca-container">
         <!-- Header -->
         <div class="header1">
-            <h1 class="judul-novel">Pulang</h1>
+            <h1 class="judul-novel">True Love</h1>
             <p class="info-novel">
-                Ditulis oleh: <span>Sarah Putri</span>
-                Rilis: <span>12 Februari 2024</span>
+                Ditulis oleh: <span>bearv</span>
+                Rilis: <span>Unknown</span>
             </p>
         </div>
 
@@ -588,10 +686,10 @@
     <div id="3" class="baca-container">
         <!-- Header -->
         <div class="header1">
-            <h1 class="judul-novel">Opacaropwile</h1>
+            <h1 class="judul-novel">Penyesalan</h1>
             <p class="info-novel">
-                Ditulis oleh: <span>Sarah Putri</span> |
-                Rilis: <span>12 Februari 2024</span>
+                Ditulis oleh: <span>bearv</span> |
+                Rilis: <span>Unknown</span>
             </p>
         </div>
 
@@ -664,10 +762,10 @@
     <div id="4" class="baca-container">
         <!-- Header -->
         <div class="header1">
-            <h1 class="judul-novel">Dreams & Spacy</h1>
+            <h1 class="judul-novel">Dipermainkan Takdir</h1>
             <p class="info-novel">
-                Ditulis oleh: <span>Sarah Putri</span> |
-                Rilis: <span>12 Februari 2024</span>
+                Ditulis oleh: <span>bearv</span> |
+                Rilis: <span>Unknown</span>
             </p>
         </div>
 
