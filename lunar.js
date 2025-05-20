@@ -165,7 +165,7 @@ function closemodalevent() {
 }
 
 function countdown() {
-    const eventnovelDate = new Date('May 25, 2025 19:00:00').getTime();
+    const eventnovelDate = new Date('June 5, 2025 2:00:00').getTime();
     setInterval(() => {
         let now = new Date().getTime();
         let distance = eventnovelDate - now;
