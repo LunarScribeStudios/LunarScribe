@@ -119,9 +119,9 @@ function filterContent() {
     var tipe = document.getElementById("tipe").value;
 
     document.querySelectorAll(".itembacanomik").forEach(function (itembacanomik) {
-        var genres = itembacanomik.dataset.genre.split(',');
-        var statuses = itembacanomik.dataset.status.split(',');
-        var types = itembacanomik.dataset.tipe.split(',');
+        var genres = itembacanomik.dataset.genre.split(',').map(g => g.trim());
+        var statuses = itembacanomik.dataset.status.split(',').map(s => s.trim());
+        var types = itembacanomik.dataset.tipe.split(',').map(t => t.trim());
 
         var matchGenre = !genre || genres.includes(genre);
         var matchStatus = !status || statuses.includes(status);
@@ -134,6 +134,7 @@ function filterContent() {
         }
     });
 }
+
 
 function searchNovel() {
     var input = document.getElementById("searchInput").value.toLowerCase();
@@ -164,7 +165,7 @@ function closemodalevent() {
 }
 
 function countdown() {
-    const eventnovelDate = new Date('april 21, 2025 19:00:00').getTime();
+    const eventnovelDate = new Date('May 25, 2025 19:00:00').getTime();
     setInterval(() => {
         let now = new Date().getTime();
         let distance = eventnovelDate - now;
@@ -351,4 +352,28 @@ function ShowMessage() {
     setTimeout(() => {
         msg.style.display = 'none';
     }, 3000);
+}
+
+// Sedikit animasi saat gambar di-hover
+const img = document.querySelector('#toko img');
+img.addEventListener('mouseover', () => {
+    img.style.transform = 'scale(1.05)';
+});
+img.addEventListener('mouseout', () => {
+    img.style.transform = 'scale(1)';
+});
+
+// testimoni
+function openPopup(src) {
+  const popup = document.getElementById("popup");
+  const popupImg = document.getElementById("popup-img");
+  popupImg.src = src;
+  popup.style.display = "flex";
+}
+
+function closePopup(e) {
+  // Only close if clicking the background or close button
+  if (e.target.id === "popup" || e.target.classList.contains("close-btn")) {
+    document.getElementById("popup").style.display = "none";
+  }
 }
