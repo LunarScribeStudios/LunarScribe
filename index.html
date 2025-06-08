@@ -63,8 +63,8 @@
             </h2>
             <div class="carousel">
                 <div class="slide1-container" id="carousel">
-                    <div class="slide1" onclick="ShowMessage()"><img src="1m1m.png" alt="slide1"></div>
-                    <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide2"></div>
+                    <div class="slide1" onclick="showPage('news')"><img src="1m1m.png" alt="slide1"></div>
+                    <div class="slide1" onclick="showPage('news')"><img src="5N.jpg" alt="slide2"></div>
                     <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide3"></div>
                     <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide4"></div>
                     <div class="slide1" onclick="ShowMessage()"><img src="cs.jpg" alt="slide5"></div>
@@ -172,7 +172,17 @@
                     <img src="1m1m.png" alt="Berita 1">
                     <div class="news-content">
                         <h2 style="color: #fff;">Sedang Diskon Novel Terbaru Hanya Seharga Rp10.000</h2>
-                        <p style="color: #cbcfff;">Karya terbaru dari salah satu novelist sedang diskon</p>
+                        <p style="color: #cbcfff;">Karya terbaru dari salah satu novelist kami sedang diskon</p>
+                        <a style="color: #072f7c;">Baca selengkapnya</a>
+                    </div>
+                </article>
+
+                <article class="news-card"
+                    onclick="openModal('5N.jpg', 'Sedang Diskon 5 Novel Bebas Pilih Hanya Seharga Rp35.000', 'Zharvian', '7 Juni 2025', 'Sedang berlangsung promo spesial! Dapatkan 5 novel pilihan favoritmu secara bebas hanya dengan harga Rp35.000 saja – kesempatan langka untuk menambah koleksi bacaanmu dengan harga super hemat!')">
+                    <img src="5N.jpg" alt="Berita 1">
+                    <div class="news-content">
+                        <h2 style="color: #fff;">Sedang Diskon 5 Novel Bebas Pilih Hanya Seharga Rp35.000</h2>
+                        <p style="color: #cbcfff;">5 Novel bebas pilih dari salah satu novelist kami sedang diskon</p>
                         <a style="color: #072f7c;">Baca selengkapnya</a>
                     </div>
                 </article>
@@ -327,8 +337,7 @@
                     <button class="chapterbacanomik" class="btn" onclick="showBaca(2)">BACA</button>
                 </div>
             </div>
-            <div class="itembacanomik" data-genre="Romance, Sad" data-status="Complete" data-tipe="Indonesia"
-                id="P">
+            <div class="itembacanomik" data-genre="Romance, Sad" data-status="Complete" data-tipe="Indonesia" id="P">
                 <img src="P.png" alt="Komik 3">
                 <div class="titlebacanomik">Penyesalan</div>
                 <div class="infobacanomik">Complete</div>
@@ -532,6 +541,54 @@
                 <div class="testimonial-content">
                     <p class="testimonial-label">Testimoni 11</p>
                     <p class="testimonial-text">"Dipermainkan Takdir"</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi13.jpg" alt="Testimoni 12" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 12</p>
+                    <p class="testimonial-text">"Dipermainkan Takdir"</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi14.jpg" alt="Testimoni 13" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 13</p>
+                    <p class="testimonial-text">"Mafia Wife"</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi15.jpg" alt="Testimoni 14" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 14</p>
+                    <p class="testimonial-text">"True Love"</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi16.jpg" alt="Testimoni 15" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 15</p>
+                    <p class="testimonial-text">"True Love"</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi17.jpg" alt="Testimoni 16" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 16</p>
+                    <p class="testimonial-text">"True Love"</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card-horizontal">
+                <img src="testi18.jpg" alt="Testimoni 16" class="testimonial-img" onclick="openPopup(this.src)">
+                <div class="testimonial-content">
+                    <p class="testimonial-label">Testimoni 17</p>
+                    <p class="testimonial-text">"Choose Any 5 Novels"</p>
                 </div>
             </div>
 
